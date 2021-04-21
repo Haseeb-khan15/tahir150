@@ -147,7 +147,7 @@ p{
 .mbl{display:none;}
 
 
-@media screen and (max-width: 600px) and (min-width:200px) {
+@media screen and (max-width: 800px) and (min-width:200px) {
     header{font-size:px;background-size: stretch;}
 
     h1{font-size:35px;}

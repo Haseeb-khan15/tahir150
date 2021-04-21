@@ -147,20 +147,20 @@ p{
 .mbl{display:none;}
 
 
-@media screen and (max-width: 800px) and (min-width:200px) {
+@media screen and (max-width: 500px) and (min-width:200px) {
     header{font-size:px;background-size: stretch;}
 
-    h1{font-size:35px;}
+    h1{font-size:25px;}
     
-    .btn{font-size: 8px; border-color: darkturquoise;border-radius: 5px; color:rgb(235, 123, 201);}
+    .btn{font-size: 5px; border-color: darkturquoise;border-radius: 5px; color:rgb(235, 123, 201);}
 
-    .mbl{display: inline;}
+    .mbl{display: inline;font-size: 15px;}
 
-    p ,.parag, .paras, .parac{font-size: 20px;}
+    p ,.parag, .paras, .parac{font-size: 15px;}
 
-    ul{max-width: 500px;float:left;}
+    ul{max-width: 600px;float:left;}
 
-    ul li a{font-size: 14px;color: rgb(144, 201, 255);}
+    ul li a{font-size: 9px;color: rgb(144, 201, 255);}
 
     .main{float:none;}
 
@@ -169,12 +169,11 @@ p{
     ul li a:hover{background-color: rgb(235, 123, 201);color: rgb(0, 75, 146);}
 
     .video{
-        position:relative;
-        border:solid blueviolet;
-    }
+        position:relative;}
+
     video{width:90%; height:auto;margin:20px;}
 
-    .h{font-size:15px;}
+    .h{font-size:14px;}
 
     .about{font-size: 15px; padding: 20px;}
 }

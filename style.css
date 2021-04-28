@@ -3,7 +3,7 @@
 }
 body{margin: 0%; padding:0%}
 header{
-    background-image: url(./images/1.jpg);
+    background-image: url(./images/download.png);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -36,9 +36,11 @@ ul li.active a{
     transform: translate(-50%,-50%);
     cursor:default;
     margin: 0%;
+    text-shadow: rgb(255, 0, 0) 5px 3px 5px;
 }
 .title:hover{
     transform: translate(-50%,-55%);
+    text-shadow: rgb(0, 60, 255) 5px 3px 5px;
     transition: 0.3s;
 }
 h1{margin: 0%;}
@@ -106,7 +108,7 @@ p{
     left: 50%;
     transform: translate(-50%,-50%);
 }
-video{border: solid rgb(35, 255, 244) 3px;border-radius:30px;border: transparent;}
+video{border: solid rgb(35, 255, 244) 3px;border-radius:30px;border: transparent; box-shadow: rgb(0, 64, 255)0px 0px 30px;}
 .about{
     font-size: 25px;
     position:absolute;
@@ -132,15 +134,32 @@ p,.paras,.parag,.parac{
 .gif{display: none;}
 
 
-@media screen and (max-width: 444px){
+@media screen and (max-width: 500px){
     header{background-position: 40%;}
     .title{
         top: 39%;
         left: 10%;
-        transform: translate(-0%,-40%); font-size: 18px;
+        transform: translate(-0%,-40%);
+        font-size: 25px;
+        text-shadow: rgb(255, 0, 0) 5px 3px 5px;
     }
-    .gif{display: inline;}
-    .btn{font-size: 12px;font-weight: 600;padding: 10px; border-color: darkturquoise;border-radius: 5px; color:rgb(235, 123, 201);
+    .title:hover{
+        top: 39%;
+        left: 10%;
+        transform: translate(-0%,-40%);
+        font-size: 25px;
+        text-shadow: rgb(0, 60, 255) 5px 3px 5px;
+        transition: 0.2s;
+    }
+    .gif{
+        position:absolute;
+        display: inline;
+        width: 250px;top:24%;
+        left: 20%;
+        transform: translate(-0%,-40%);
+        font-size: 25px;
+    }
+    .btn{font-size: 15px;font-weight: 600;padding: 10px; border-color: darkturquoise;border-radius: 5px; color:rgb(235, 123, 201);
     }
     .btn:hover{color: rgb(255, 255, 255);background-color:rgb(235, 123, 201);
     }
@@ -158,7 +177,7 @@ p,.paras,.parag,.parac{
         left:5%; 
         text-shadow:black 1px 1px 5px;
     }
-    .parai ,.parag, .paras, .parac{font-size: 13px; padding: 10px 0; position: absolute; top: 80%;
+    .parai ,.parag, .paras, .parac{font-size: 15px; padding: 10px 0; position: absolute; top: 80%;
     }
     .h{
         position:absolute;
@@ -166,7 +185,7 @@ p,.paras,.parag,.parac{
         left: 25%;
         transform: translate(-10%,-50%);
     }
-    .h h2{font-size:20px;
+    .h h2{font-size:30px;
     }
     .h h2 a{text-decoration: none;
     }
@@ -176,7 +195,7 @@ p,.paras,.parag,.parac{
     ul { width: 100%;display: flex;justify-content: center;
     }
 
-    ul li a{font-size: 15px;color: rgb(144, 201, 255); padding: 4px 5px;font-weight: 400;
+    ul li a{font-size: 16px;color: rgb(144, 201, 255); padding: 5px 5px;font-weight: 400;margin: 6px;
     }
 
     ul li.active a{background-color: rgb(235, 123, 201);color: rgb(0, 75, 146);
@@ -185,7 +204,7 @@ p,.paras,.parag,.parac{
     ul li a:hover{background-color: rgb(235, 123, 201);color: rgb(0, 75, 146);
     }
 
-    .video{ position:relative;transform:translateX(-46%); top:25%;
+    .video{ position:relative;transform:translateX(-46%); top:25%;;
     }
 
     video{width:90%; height:auto;margin:0px;
@@ -197,89 +216,6 @@ p,.paras,.parag,.parac{
     }
     .about{
         font-size: 20px;
-        position:absolute;
-        top: 50%;
-        left: 20%;
-        transform: translate(-15%,-50%);
-        border: solid cornsilk 1px;
-        padding: 20px;
-        border-width: 2px;
-        border-radius: 10px;
-        border-style:groove;
-    }
-}
-@media screen and (min-width: 445px)and (max-width:560px){
-    header{background-position: 40%;}
-    .title{
-        top: 39%;
-        left: 10%;
-        transform: translate(-0%,-40%); font-size: 30px;
-    }
-    .title:hover{
-        top: 39%;
-        left: 10%;
-        transform: translate(-0%,-40%); font-size: 30px;
-    }
-    .gif{display: inline;}
-    .btn{font-size: 16px;font-weight: 600;padding: 10px; border-color: darkturquoise;border-radius: 5px; color:rgb(235, 123, 201);
-    }
-    .btn:hover{color: rgb(255, 255, 255);background-color:rgb(235, 123, 201);
-    }
-    .button{
-        top: 48%;
-        left: 40%;
-        transform: translate(-35%,-30%);
-    }
-    .mbl{display: inline;font-size: 20px;margin: 0%;
-    }
-    .social{
-        position: absolute;
-        top: 72%;
-        left:5%; 
-        text-shadow:black 1px 1px 5px;
-    }
-
-    .parai ,.parag, .paras, .parac{font-size: 15px; padding: 10px 0; position: absolute; top: 80%;
-    }
-
-    .h{
-        position:absolute;
-        top: 50%;
-        left: 25%;
-        transform: translate(-10%,-50%);
-    }
-
-    .h h2{font-size:35px;
-    }
-    .h h2 a{text-decoration: none;
-    }
-    .fa-whatsapp{color: rgb(0, 184, 46);
-    }
-
-    ul { width: 100%;display: flex;justify-content: center;
-    }
-
-    ul li a{font-size: 17px;color: rgb(144, 201, 255); padding: 3px 6px;font-weight: 400;margin:5px;
-    }
-
-    ul li.active a{background-color: rgb(235, 123, 201);color: rgb(0, 75, 146);
-    }
-
-    ul li a:hover{background-color: rgb(235, 123, 201);color: rgb(0, 75, 146);
-    }
-
-    .video{ position:relative;transform:translateX(-46%); top:25%;
-    }
-
-    video{width:90%; height:auto;margin:0px;
-    }
-
-    .h{font-size:10px;
-    }
-    .about{font-size: 20px; padding: 15px;
-    }
-    .about{
-        font-size: 30px;
         position:absolute;
         top: 50%;
         left: 20%;

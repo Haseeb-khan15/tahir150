@@ -28,8 +28,20 @@
         <script>
             alert("Ruko zara    ,   Sabar Karo");
         </script>
+        <script>
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    alert("Tahir is Genius & detected You are Using Mobile");
+  } else {
+   alert("Tahir is Genius & Detected you are using Computer")
+  }
+}
+var x = window.matchMedia("(max-width: 600px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+</script>
         <div class="social"><span class="mbl">Haan Kesa Diya ?   &#128522;</span></div>
-        <img class="gif" src="https://lh3.googleusercontent.com/proxy/lUVfNSvRfkmkznmYZRE01lSXkZ0yCSj4tmiACxcmmH30NgXjgnBAa0Xhrljo91KTsnbcrM5eKgX2aq9NSm_Ocjlr_KEu8Cs" alt="">
+        <img class="gif" src="./images/gif.gif" alt="GIF">
     </header>
 </body>
 </html>

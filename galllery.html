@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Tahir's Web</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -16,7 +17,26 @@
                 <li><a href="./about.html">About me</a></li>
             </ul>
         </div>
-        <div class="video"><video src="./video/video.mp4" controls></video></div>
+        <div class="video"><video id="myvideo" src="./video/video.mp4" controls></video>
+            <button class="play" onclick="volume()" type="button"> <i class="fas fa-volume-down"></i></button>
+            <button class="play" onclick="playvid()" type="button"> <i class="fas fa-play"></i> Play Video</button>
+            <button class="play" onclick="volumes()" type="button"> <i class="fas fa-volume-up"></i></i></button>
+        </div>
+        <script>
+            var vid = document.getElementById("myvideo");
+            function playvid() {
+                vid.play();
+            }
+            var vid = document.getElementById("myvideo");
+            function volume(){
+                vid.volume = 0.2;
+            }
+            var vid = document.getElementById("myvideo");
+            function volumes(){
+                vid.volume = 1
+            }
+            
+        </script>
             <p class="parag">
                 Hey ! My Name Is Tahir And i've Designed this Website !
             </p>

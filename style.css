@@ -7,7 +7,8 @@ header{
     height: 100vh;
     background-size: cover;
     background-position: center;
-    position: relative;   
+    position: relative;
+    overflow: hidden;
 }
 ul{
     float: right;
@@ -184,11 +185,11 @@ p,.paras,.parag,.parac{
     }
     .social{
         position: absolute;
-        top: 72%;
+        top: 70%;
         left:5%; 
         text-shadow:black 1px 1px 5px;
     }
-    .parai ,.parag, .paras, .parac{font-size: 15px; padding: 10px 0; position: absolute; top: 80%;
+    .parai ,.parag, .paras, .parac{font-size: 15px; padding: 10px 0; position: absolute; top:78%;
     }
     .h{
         position:absolute;
@@ -219,7 +220,7 @@ p,.paras,.parag,.parac{
         color: rgb(4, 255, 109);
     }
 
-    .video{ position:relative;transform:translateX(-50%); top:25%;
+    .video{ position:relative;transform:translateX(-50%); top:23%;
     }
 
     video{width:90%; height:auto;margin:0px;

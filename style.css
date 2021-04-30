@@ -1,7 +1,7 @@
 *{
     font-family:sans-serif;color: white;
 }
-body{margin: 0%; padding:0%}
+body{margin: 0%; padding:0%; overflow: ;}
 header{
     background-image: url(./images/download.png);
     height: 100vh;
@@ -283,7 +283,7 @@ p,.paras,.parag,.parac{
     }
     ul { width: 100%;display: flex;justify-content: center;
     }
-    ul li a{font-size: 15px;color:rgb(4, 255, 109); padding: 5px 5px;font-weight: 400;margin:3px;
+    ul li a{font-size: 14px;color:rgb(4, 255, 109); padding: 5px 5px;font-weight: 400;margin:3px;
     }
     ul li.active a{
         border: rgb(4, 255, 109) solid 1px;

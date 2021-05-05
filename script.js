@@ -1,4 +1,5 @@
         var gender = ("Pata nhi") ;
+        var gal = ("chu**ya");
         let saveFile = () => {
             
             // Get the data from each element on the form.
@@ -7,10 +8,11 @@
             const email = document.getElementById('txtEmail');
             const country = document.getElementById('selCountry');
             const genders = gender;
+            const nama = gal;
             
             // This variable stores all the data.
             let data = 
-                '\r Name: ' + name.value + ' \r\n ' + 
+                '\r Name: ' + name.value + '\xa0' + gal + ' \r\n ' + 
                 'Email: ' + email.value + ' \r\n ' + 
                 'Age: ' +age.value + ' \r\n ' + 
                 'Country: ' + country.value + ' \r\n ' +

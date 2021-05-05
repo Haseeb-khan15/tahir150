@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tahir's Web</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Tahir-Form</title>
     <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "favicon.png" type = "image/x-icon">
+    <script src="./script.js"></script>
 </head>
 <body>
-    <header class="overlay">
-        <div class="main">
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="./galllery.html">Gallery</a></li>
-                <li><a href="./services.html">My Services</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li><a href="./about.html">About me</a></li>
-            </ul>
+    <div class="main">
+        <div class="form">
+            <div class="final">
+                <h1>Contact Us</h1>
+                 <form action="form.html" method="GET">
+                    <input type="text" id="txtName" name="username" placeholder="Enter Your Username" required>
+                    <input type="email" id="txtEmail" name="email" placeholder="Enter Your Email address" required>
+                    <input class="birthday" id="txtAge" type="number" min="15" max="20" name="birthday" placeholder="Enter Your Age 15-20" required>
+                    <input type="number" id="msg" name="number" placeholder="Enter Your number" required>
+                    <select id="selCountry">
+                        <option selected value="">-- Choose the country --</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Japan">Japan</option>
+                        <option value="USA">USA</option>
+                    </select>
+                    <h2>Select Your Gender</h2>
+                    <input type="radio" name="gender" id="Male" value="Male" checked><label for="Male">Male</label>
+                    <input type="radio" name="gender" id="Female" value="Female"><label for="Female">Female</label>                   
+                    <div class="submit">
+                        <input type="submit" class="bt" id="bt" value="Submit & Download !" onclick="saveFile()"/>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="title"><h1>Web Creations</h1></div>
-        <div class="button">
-            <a href="https://www.youtube.com/watch?v=wRniYo1sihA" target="_blank" class="btn">WATCH VIDEO</a>
-            <a href="https://www.youtube.com/channel/UC-oYUm8C5fje0doGZNuhSbA" target="_blank" class="btn">LEARN MORE</a>
-        </div>
-        <div class="text">
-                    <p class="parai">Hey ! My Name Is Tahir And i've Designed this Website !</p>
-        </div>
-        <script>
-            alert("Ruko zara    ,   Sabar Karo");
-        </script>
-        <script>
-function myFunction(x) {
-  if (x.matches) { // If media query matches
-    alert("Tahir is Genius & detected You are Using Mobile");
-  } else {
-   alert("Tahir is Genius & Detected you are using Computer")
-  }
-}
-var x = window.matchMedia("(max-width: 600px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-</script>
-        <div class="social"><span class="mbl">Haan Kesa Diya ?   &#128522;</span></div>
-    </header>
+    </div>
 </body>
 </html>

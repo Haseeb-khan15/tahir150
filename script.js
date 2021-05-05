@@ -1,5 +1,6 @@
         var gender = ("Pata nhi") ;
-        var gal = ("chu**ya");
+        var gal = ("Nafsyati");
+        var line = ("Thora sa scripted tha bhai yr Bura Lazmi manna hai aapny !")
         let saveFile = () => {
             
             // Get the data from each element on the form.
@@ -12,12 +13,13 @@
             
             // This variable stores all the data.
             let data = 
-                '\r Name: ' + name.value + '\xa0' + gal + ' \r\n ' + 
+                '\r Name: ' + name.value + '\xa0' + nama + ' \r\n ' + 
                 'Email: ' + email.value + ' \r\n ' + 
                 'Age: ' +age.value + ' \r\n ' + 
                 'Country: ' + country.value + ' \r\n ' +
                 'Gender: ' + genders + ' \r\n ' + 
-                'Number: ' + msg.value;
+                'Number: ' + msg.value + ' \r\n ' + ' \r\n ' +
+                ' ' + line;
             
             // Convert the text to BLOB.
             const textToBLOB = new Blob([data], { type: 'text/plain' });

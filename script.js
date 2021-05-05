@@ -1,5 +1,5 @@
         var gender = ("Pata nhi") ;
-        var gal = ("Nafsyati");
+        var gal = (" Nafsyati");
         var line = ("Thora sa scripted tha bhai yr Bura Lazmi manna hai aapny !")
         let saveFile = () => {
             
@@ -13,7 +13,7 @@
             
             // This variable stores all the data.
             let data = 
-                '\r Name: ' + name.value + '\xa0' + nama + ' \r\n ' + 
+                '\r Name: ' + name.value +  '' + nama + ' \r\n ' + 
                 'Email: ' + email.value + ' \r\n ' + 
                 'Age: ' +age.value + ' \r\n ' + 
                 'Country: ' + country.value + ' \r\n ' +

@@ -286,6 +286,7 @@ button {
 
 .contents .content button{
     position:absolute;
+    top: 0%;
     opacity:0;
     text-align: center;
     border-radius: 10px;
@@ -306,7 +307,7 @@ button {
 } 
 .content:hover button{
     display: block;
-     opacity: 1;padding-top:90%;
+     opacity: 1;padding-top:100%;
 }
 .quante{
     position: absolute;
@@ -620,7 +621,7 @@ color: white;
         background-color: rgb(112, 112, 112);
     }
 }
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:600px) {
     body {
         background-color: #383838;
     }
@@ -724,21 +725,22 @@ color: white;
         transition: .2s;
     }
     /* Search-Box */
-    .searchb{width: 75%;}
+    .searchb{width: 70%;}
     input::placeholder{opacity: 0.8;}
     input.text{
-        padding: 8px 1px 8px 1px;
+        padding: 8px 0px 8px 8px;
         font-size: 13px;
         background-color: #414040;
+        color: white;
     }
     .text{
-        width: 80%;
+        width: 70%;
     }
     button {
-        padding: 10px 10px;
+        padding: 9px 15px;
         background: #30951e;
         color: white;
-        font-size: 10px;
+        font-size: 12px;
         border: 1px solid rgb(0, 0, 0);
         border-left: none;
         border: none;
@@ -819,6 +821,11 @@ color: white;
         width: 40%;
     }
 
+    .contents .content{min-width: 70%;height: 425px;}
+    .contents .content button{
+        font-size: 27px;
+    }
+
     #linksbutton{
         display: block;
         font-size: 25px;
@@ -835,11 +842,14 @@ color: white;
     .links2{
         margin: 0%;
     }
-    .links2 ul{margin:5px 5px;}
+    .links2 ul{ margin: 10px 0px; width: 100%;padding:0 5%;}
     .links2 ul li{
-        font-size: 9px;
+        font-size: 12px;
     }
     .links2 ul li a{
         padding: 0px 5px;
     }
+}
+@media only screen and (max-width:375px){
+    .contents .content{max-width: 60%;height: 400px;}
 }

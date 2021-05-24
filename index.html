@@ -9,7 +9,6 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
     <link rel = "icon" href = "https://i1.wp.com/www.ideaimaji.com/blog/wp-content/uploads/2016/08/cropped-favicon.png?fit=512%2C512&ssl=1" type = "image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./new.css">
     <title>Smarteshop.pk</title>
   </head>
@@ -24,7 +23,7 @@
               <button id="Navclose"><span class="mediaicon"><i class="fas fa-times"></i></span></button>
                    <div class="ul-center">
                     <ul>
-                      <li><a href="#"><i class="fas fa-user" id="NavcloseOnLogIn"></i>&nbsp;<a id="loginb" style="font-size: 15px;"><span onclick="myfunction()">LOGIN / REGISTER</span></a></li>
+                      <li><a href="#"><i class="fas fa-user" id="NavcloseOnLogIn"></i>&nbsp;<a id="loginb" style="font-size: 15px;" onclick="myfunction()">LOGIN / REGISTER</a></li>
                       <li><a href="#" class="b-l"><i class="far fa-envelope"></i>&nbsp; NEWSLATTER</a></li>
                       <li><a href="#"><i class="fas fa-id-card-alt"></i>&nbsp;  CONTACT US</a></li>
                       <li><a href="#"><i class="far fa-question-circle"></i>&nbsp;  FAQS</a></li>
@@ -79,7 +78,7 @@
             </form> 
             </div>
             <div class="log">
-              <a id="loginb">LOGIN / REGISTER</a> 
+              <a id="logind">LOGIN / REGISTER</a> 
             </div>
             <div class="picons">
               <a class="icons" href="#"><i class="zoom far fa-heart"><span class="quant">5</span></i></a>
@@ -236,10 +235,23 @@
 
         function newfunction(){
            var user = document.getElementById("name").value;
+          document.getElementById("logind").innerHTML= "Hi , " + user;
+          alert ("Umeed hai aap ko pasand aya hoga " + user + " !")
+          document.getElementById("logot").innerHTML=" " + user + " &nbsp;";
+        }
+        document.getElementById("logind").addEventListener("click", function(){
+          document.querySelector(".loginparent").style.display = "flex";
+        })
+        function newfunction(){
+           var user = document.getElementById("name").value;
           document.getElementById("loginb").innerHTML= "Hi , " + user;
           alert ("Umeed hai aap ko pasand aya hoga " + user + " !")
           document.getElementById("logot").innerHTML=" " + user + " &nbsp;";
         }
+        document.getElementById("loginb").addEventListener("click", function(){
+          document.querySelector(".loginparent").style.display = "flex";
+        })
+        
         window.onscroll = scrollShowNav;
         function scrollShowNav() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -257,9 +269,6 @@
         function myfunction(){
           document.querySelector(".media-side").style.marginRight="-80%";
         }
-        document.getElementById("loginb").addEventListener("click", function(){
-          document.querySelector(".loginparent").style.display = "flex";
-        })
         function linksfunction(){
         var x=document.getElementById("myDiv")
         if (x.style.display === "none") {

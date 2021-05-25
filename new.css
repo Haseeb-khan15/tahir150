@@ -624,8 +624,9 @@ color: white;
 @media only screen and (max-width:600px) {
     body {
         background-color: #383838;
+        overflow: hidden;
+        overflow-y:scroll;
     }
-    
     .nav2{
         position: relative;
         display: flex;

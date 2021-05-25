@@ -236,7 +236,8 @@ button {
 .links2 ul li{display: inline-block;}
 .links2 ul li a{
     color: rgb(255, 248, 248);
-    padding: 0px 10px;
+    padding: 5px 10px;
+    margin:5px 4px;
     
 }
 .contents{
@@ -443,7 +444,7 @@ nav{display: block;}
 .media-nav{
     display: flex;
     justify-content: space-between;
-    margin-right: -5px;
+    margin-right: 20px;
 }
 .media-nav button{
     color: white;
@@ -454,7 +455,7 @@ nav{display: block;}
     border-bottom-left-radius:40%;
     transition: .3s;
     padding: 0 12px 0 7px;
-    margin-right: -5px;
+    margin-right: -20px;
 }
 .media-nav button:active{
     opacity: 0.4;
@@ -488,7 +489,7 @@ color: white;
     height: 100vh;
     box-shadow: black -8px 5px 30px;
     transition: .8s;
-    margin-right: -80%;
+    margin-right: -100%;
     display: none;
 }
 .media-side .b-l{
@@ -624,9 +625,8 @@ color: white;
 @media only screen and (max-width:600px) {
     body {
         background-color: #383838;
-        overflow: hidden;
-        overflow-y:scroll;
     }
+    
     .nav2{
         position: relative;
         display: flex;
@@ -849,7 +849,11 @@ color: white;
     .links2{
         margin: 0%;
     }
-    .links2 ul{ margin: 10px 0px; width: 100%;padding:0 5%;}
+    .links2 ul {
+        margin: 10px 0px;
+        width: 100%;
+        padding: 0px 0%;
+    }
     .links2 ul li{
         font-size: 12px;
     }

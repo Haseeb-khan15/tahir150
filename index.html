@@ -68,7 +68,7 @@
           <div class="nav2">
             <div class="logocss">
           <div class="logofull">
-            <span class="logoit"><span class="logoi"><i class="fas fa-laptop"></i></span><span class="logot" id="logot"> Website</span></span>
+            <span class="logoit"><span class="logoi"><i class="fas fa-laptop"></i></span><span class="logot" id="logot"><a href="#bottom">Website</a></span></span>
           </div>
         </div>
             <div class="searchb">
@@ -219,11 +219,9 @@
       </div>
       </div>
         <footer>
-            <p>This Website has been Developed By Tahir !</p> <br>
+            <p id="bottom">This Website has been Developed By 😎 <br><br> <a href="#top"><i class="fas fa-user-check" style="color: rgb(0, 189, 0);"> Tahir</i></p></a> <br>
         </footer>
       <script>
-        // var gender = prompt("Ruko Pehly Ye Batao Larka ho ya Larki ?")
-        // alert("To Mein kia karun Aap " + gender + " ho to? Website hi Tw dekhni hai na Dekhlo fuzool mein bol rhy ho " + gender +" ho !")
 
         document.querySelector(".closee").addEventListener("click",function(){
           document.querySelector(".loginparent").style.display = "none";
@@ -235,19 +233,14 @@
 
         function newfunction(){
            var user = document.getElementById("name").value;
-          document.getElementById("logind").innerHTML= "Hi , " + user;
-          alert ("Umeed hai aap ko pasand aya hoga " + user + " !")
+           alert ("Umeed hai aap ko pasand aya hoga " + user + " !")
+           document.getElementById("logind").innerHTML= "Hi , " + user;
           document.getElementById("logot").innerHTML=" " + user + " &nbsp;";
+          document.getElementById("loginb").innerHTML= "Hi , " + user;
         }
         document.getElementById("logind").addEventListener("click", function(){
           document.querySelector(".loginparent").style.display = "flex";
         })
-        function newfunction(){
-           var user = document.getElementById("name").value;
-          document.getElementById("loginb").innerHTML= "Hi , " + user;
-          alert ("Umeed hai aap ko pasand aya hoga " + user + " !")
-          document.getElementById("logot").innerHTML=" " + user + " &nbsp;";
-        }
         document.getElementById("loginb").addEventListener("click", function(){
           document.querySelector(".loginparent").style.display = "flex";
         })

@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     padding: 0;
     margin: 0;
@@ -621,6 +624,7 @@ color: white;
         box-shadow: inset 0px 0px 10px #414040,0px 0px 5px #464646;
         background-color: rgb(112, 112, 112);
     }
+    .media-side{width: 35%;}
 }
 @media only screen and (max-width:600px) {
     body {
@@ -860,6 +864,7 @@ color: white;
     .links2 ul li a{
         padding: 0px 5px;
     }
+    .media-side{width: 75%;}
 }
 @media only screen and (max-width:375px){
     .contents .content{max-width: 60%;height: 400px;}

@@ -22,8 +22,8 @@ h1,h2{display: inline-block; color: rgb(255, 255, 255); margin: 15px 0;}
     font-weight: 600;
     line-height: 55px;
     font-size: 39px;
-    background-color: rgba(46, 46, 46, 0.329);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.664);
+    background-color: rgba(61, 61, 61, 0.329);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.527);
     position:relative;
 }
 #top {
@@ -48,21 +48,41 @@ h1,h2{display: inline-block; color: rgb(255, 255, 255); margin: 15px 0;}
     font-size: 15px;
     transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-8deg, 0deg);
 }
+@media only screen and (max-width: 400px) {
+    h1, h2 {
+        margin: 8px 0;
+        font-size: 30px;
+    }
+    #jstableNumber {
+        font-size: 19px;
+        margin-bottom: 16px;
+    }
+    #finalTable {
+        border-radius: 29px;
+        padding: 32px 42px;
+        line-height: 48px;
+        font-size: 34px;
+    }
+    #top {
+        transform: scale(23);
+        opacity: .15;
+        left: 45%;
+    }
+    #bottom {
+        margin-top: 31px;
+    }
+    
+}  
 
 @media only screen and (max-width: 800px) {
     h1,h2{ margin: 12px 0;}
-    #jstableNumber{
-        font-size: 20px;
-        margin-bottom: 45px;
-    }
-    #finalTable{
-        border-radius: 18px;
-        padding: 45px;
-        line-height: 53px;
-        font-size: 35px;
+    #jstableNumber {
+        font-size: 19px;
+        margin-bottom: 30px;
     }
     #top {
-        transform: scale(30);
+        transform: scale(20);
+        top: 45%;
         opacity: .2;
     }
     #bottom{

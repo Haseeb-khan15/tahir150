@@ -4,6 +4,8 @@ body{
     background: linear-gradient(330deg, rgb(28, 65, 255) 0%, rgb(137, 30, 167) 50%, rgb(255, 27, 73) 100%) no-repeat fixed;
     overflow-x: hidden;
     font-family: 'Biryani', sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
 *{margin: 0%;padding: 0%;    transition: .5s;}
 .table{
@@ -64,7 +66,7 @@ h1, h2 {
     font-weight: 600;
     position:absolute;
     font-size: 20px;
-    animation: new 6s 2s;
+    animation: new 6s 4s;
     left: -25%;
     top: 50%;
 }
@@ -81,7 +83,7 @@ h1, h2 {
     font-weight: 600;
     position:absolute;
     font-size: 20px;
-    animation: emoji 6s 5s;
+    animation: emoji 6s 7s;
     right: -25%;
     top: 50%;
 }
@@ -94,9 +96,10 @@ h1, h2 {
     }
 }
 .tahir{
-    position: absolute;
-    bottom: 1%;
-    right: 3%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px;
+    margin: 0%;
     font-size: 15px;
     transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-8deg, 0deg);
 }

@@ -38,9 +38,9 @@ h1, h2 {
     position: absolute;
     color: violet;
     top: -2%;
-    opacity: .2;
+    opacity: .4;
     font-size: 400px;
-    left: 15%;
+    left: 11%;
     z-index: -1;
 }
 #bottom {
@@ -59,7 +59,7 @@ h1, h2 {
     }
 }
 #bottom:hover{
-    color: rgb(139, 139, 139);
+    color: rgb(139, 139, 139);animation: none;
 }
 .kaisa{
     font-size: 15px;
@@ -83,7 +83,7 @@ h1, h2 {
     font-weight: 600;
     position:absolute;
     font-size: 20px;
-    animation: emoji 6s 7s;
+    animation: emoji 6s 6s;
     right: -25%;
     top: 50%;
 }

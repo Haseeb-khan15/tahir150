@@ -17,9 +17,10 @@ h1, h2 {
     margin: 5px 0;
 }
 #jstableNumber {
-    font-size: 25px;
+    font-size: 23px;
     margin-bottom: 29px;
 }
+
 #finalTable {
     border-radius: 20px;
     padding: 23px 50px;
@@ -29,24 +30,68 @@ h1, h2 {
     font-size: 39px;
     background-color: rgba(61, 61, 61, 0.329);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.527);
-    position: relative;
 }
+.finaltablediv{position: relative;}
 #top {
-    font-size: 3px;
-    top: 48%;
-    color: violet;
     position: absolute;
-    transform: scale(25);
+    color: violet;
+    top: -2%;
     opacity: .2;
+    font-size: 400px;
+    left: 15%;
+    z-index: -1;
 }
 #bottom {
     margin-top: 34px;
-    cursor: pointer;
     font-size: 21px;
     font-weight: bold;
+    cursor: pointer;
+    animation: bottom 1.5s 3s  infinite;
+}
+@keyframes bottom {
+    0%, 100% {
+        color: rgb(255, 255, 255);
+    }
+    50% {
+        color: rgb(122, 122, 122);
+    }
 }
 #bottom:hover{
     color: rgb(139, 139, 139);
+}
+.kaisa{
+    font-size: 15px;
+    font-weight: 600;
+    position:absolute;
+    font-size: 20px;
+    animation: new 6s 2s;
+    left: -25%;
+    top: 50%;
+}
+@keyframes new {
+    0%, 100% {
+        left: -25%;
+    }
+    50% {
+        left: 10%;
+    }
+}
+.kaise{
+    font-size: 15px;
+    font-weight: 600;
+    position:absolute;
+    font-size: 20px;
+    animation: emoji 6s 5s;
+    right: -25%;
+    top: 50%;
+}
+@keyframes emoji {
+    0%, 100% {
+        right: -25%;
+    }
+    50% {
+        right: 10%;
+    }
 }
 .tahir{
     position: absolute;
@@ -61,19 +106,19 @@ h1, h2 {
         font-size: 38px;
     }
     #jstableNumber {
-        font-size: 19px;
-        margin-bottom: 16px;
+        font-size: 18px;
+        margin-bottom: 30px;
     }
     #finalTable {
-        border-radius: 29px;
-        padding: 32px 42px;
-        line-height: 48px;
-        font-size: 34px;
-    }
-    #top {
-        transform: scale(23);
-        opacity: .15;
-        left: 45%;
+        border-radius: 20px;
+        padding: 23px 50px;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        line-height: 55px;
+        font-size: 39px;
+        font-size: 30px;
+        background-color: rgba(61, 61, 61, 0.329);
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.527);
     }
     #bottom {
         margin-top: 31px;
@@ -84,13 +129,7 @@ h1, h2 {
 @media only screen and (max-width: 800px) {
     h1,h2{ margin: 12px 0;}
     #jstableNumber {
-        font-size: 19px;
-        margin-bottom: 30px;
-    }
-    #top {
-        transform: scale(20);
-        top: 45%;
-        opacity: .2;
+        font-size: 20px;
     }
     #bottom{
         margin-top: 40px;

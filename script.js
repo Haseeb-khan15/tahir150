@@ -1,5 +1,6 @@
 var br = "<br>"
-var n =+prompt("Enter a Table Number !" , "0")
+var n
+while (isNaN(n = prompt("Enter Table Number , You Can Use Number Only", "2")));
 var d="Showing the Table of Number "+n;
 document.getElementById("jstableNumber").innerHTML = d
 document.getElementById("top").innerHTML = n

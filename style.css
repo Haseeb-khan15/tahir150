@@ -61,7 +61,7 @@ h1, h2 {
     font-size: 21px;
     font-weight: bold;
     cursor: pointer;
-    animation: bottom 1.5s 3s  infinite;
+    animation: bottom 1.5s 3s infinite;
 }
 @keyframes bottom {
     0%, 100% {

@@ -5,12 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <title>Clock</title>
 </head>
 <body onload="startTime()"> 
-        <div class="background"></div>
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          h = h % 12;
+          h = h ? h : 12;
+          var ampm = h >= 12 ? 'PM' : 'AM ';
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML = h + ": " ;
+          document.getElementById('min').innerHTML = m + ": " ;
+          document.getElementById('sec').innerHTML = s + "&nbsp;"  ;
+          document.getElementById('amp').innerHTML = ' ' + ampm ;
+          var t = setTimeout(startTime,1000);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10
+          return i;
+        } 
+        </script>
         <div class="text">
           <div class="time">
             <div id="txt"></div>

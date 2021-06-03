@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300&display=swap" rel="stylesheet">
-    <link rel = "icon" href = "https://www.pngarts.com/files/9/King-Black-Crown-PNG-HD-Quality.png" type = "image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Table - Tahir</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <title>Clock</title>
 </head>
-<body>
-</body>
-<div class="table">
-    <h1>Table Program</h1>
-    <h2 id="jstableNumber">Please Refresh & Enter Table Number</h1>
-        <div class="finaltablediv">
-            <p id="finalTable"></p>
-            <span id="top"></span>
+<body onload="startTime()"> 
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          h = h % 12;
+          h = h ? h : 12;
+          var ampm = h >= 12 ? 'PM' : 'AM ';
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML = h + ": " ;
+          document.getElementById('min').innerHTML = m + ": " ;
+          document.getElementById('sec').innerHTML = s + "&nbsp;"  ;
+          document.getElementById('amp').innerHTML = ' ' + ampm ;
+          var t = setTimeout(startTime,1000);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10
+          return i;
+        } 
+        </script>
+        <div class="background"></div>
+        <div class="text">
+          <div class="time">
+            <div id="txt"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+            <div id="amp"></div>
+            <div class="message">Hi , I am your Device's Time !</div>
+          </div>
+
         </div>
-        <p id="bottom" onclick="reload()">Tap here For a New Table</p>
-    </div>
-    <p class="tahir">Programmed By Tahir</p>
-    <p class="kaisa">Kesa 😎</p>
-    <p class="kaise">😎🔥</p>
-<script src="./script.js"></script>
+</script>
+
+</body>
 </html>

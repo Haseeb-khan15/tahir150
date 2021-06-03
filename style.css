@@ -1,154 +1,56 @@
 body{
     color: white;
-    background: rgb(63,94,251);
-    background: linear-gradient(330deg, rgb(28, 65, 255) 0%, rgb(137, 30, 167) 50%, rgb(255, 27, 73) 100%) no-repeat fixed;
-    overflow-x: hidden;
-    font-family: 'Biryani', sans-serif;
+    background: rgb(19, 19, 19) url(./image.jfif) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: sans-serif;
     margin: 0%;
     padding: 0%;
 }
-*{margin: 0%;padding: 0%;    transition: .5s;}
-.table{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-h1, h2 {
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    margin: 5px 0;
-}
-#jstableNumber {
-    font-size: 23px;
-    margin-bottom: 29px;
-}
-
-#finalTable {
-    border-radius: 20px;
-    padding: 23px 50px;
-    color: rgb(255, 255, 255);
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.603);
-    font-weight: 600;
-    line-height: 55px;
-    font-size: 39px;
-    background-color: rgba(61, 61, 61, 0.329);
-    background: rgba( 0, 0, 0, 0.10 );
-    box-shadow: 12px 11px 20px rgba(0, 0, 0, 0.301);
-    backdrop-filter: blur( 1.0px );
-    -webkit-backdrop-filter: blur( 1.0px );
-    border-radius: 10px;
-    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-left: 1px solid rgba( 255, 255, 255, 0.18 );
-    border-right: 1px solid rgba( 255, 255, 255, 0.08 );
-    border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
-    /* box-shadow: 0px 0px 30px rgb(60 60 60); */
-}
-.finaltablediv{position: relative;}
-#top {
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    color: violet;
-    opacity: .4;
-    font-size: 350px;
-    text-shadow: 5px 5px 15px rgb(0, 0, 0);
+.background{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    position:absolute;
     z-index: -1;
-    text-align: center;
 }
-#bottom {
-    margin-top: 34px;
-    font-size: 21px;
-    font-weight: bold;
-    cursor: pointer;
-    animation: bottom 1.5s 3s infinite;
-}
-@keyframes bottom {
-    0%, 100% {
-        color: rgb(255, 255, 255);
-    }
-    50% {
-        color: rgb(122, 122, 122);
-    }
-}
-#bottom:hover{
-    color: rgb(139, 139, 139);animation: none;
-}
-.kaisa{
-    font-size: 15px;
-    font-weight: 600;
-    position:absolute;
-    font-size: 20px;
-    animation: new 6s 4s;
-    left: -25%;
-    top: 50%;
-}
-@keyframes new {
-    0%, 100% {
-        left: -25%;
-    }
-    50% {
-        left: 10%;
-    }
-}
-.kaise{
-    font-size: 15px;
-    font-weight: 600;
-    position:absolute;
-    font-size: 20px;
-    animation: emoji 6s 7s;
-    right: -25%;
-    top: 50%;
-}
-@keyframes emoji {
-    0%, 100% {
-        right: -25%;
-    }
-    50% {
-        right: 10%;
-    }
-}
-.tahir{
+.text{
+    height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: flex-end; 
-    padding: 20px;
-    margin: 0%;
-    font-size: 15px;
-    transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-8deg, 0deg);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
-@media only screen and (max-width: 400px) {
-    h1, h2 {
-        margin: 8px 0;
-        font-size: 38px;
+.time{
+    border-radius:20px;
+    padding: 15px;
+    min-width:40%;
+    text-align: center;
+    border: solid 1px;
+}
+#txt , #min , #sec , #amp{
+    transition:.5s;
+    font-size: 100px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: inline-block;
+}
+#amp{
+    font-size: 30px;
+}
+@media (max-width:600px){
+    .time{
+        padding: 20px;
     }
-    #jstableNumber {
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
-    #finalTable {
-        border-radius: 20px;
-        padding: 23px 50px;
-        color: rgb(255, 255, 255);
-        font-weight: 600;
-        line-height: 55px;
-        font-size: 39px;
-        font-size: 30px;
-        background-color: rgba(61, 61, 61, 0.329);
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.527);
-    }
-    #bottom {
-        margin-top: 31px;
-    }
-    
-}  
-
-@media only screen and (max-width: 800px) {
-    h1,h2{ margin: 12px 0;}
-    #jstableNumber {
-        font-size: 20px;
-    }
-    #bottom{
-        margin-top: 40px;
-    }
-    
-}  
+#txt , #min , #sec , #amp{
+    font-size: 50px;
+}
+#amp{
+    font-size: 18px;
+}
+.message{
+    font-size: 15px;
+}
+}

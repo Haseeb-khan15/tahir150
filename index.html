@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="./images/clock-png.png" type="x/icon">
+    <link rel="icon" href="./clock-png.png" type="x/icon">
     <title>Clock</title>
 </head>
 <body onload="startTime()">
         <div class="text">
-          <div class="time">
+          <div id="time" class="time" onclick="hide()"  style="display: none;">
             <div id="txt"></div>
             <div id="min"></div>
             <div id="sec"></div>
             <div id="amp"></div>
             <div class="message">Hi , I am your Device's Time !</div>
           </div>
-        <h2 id="lang" onclick="lange()" >Time Is Running Faster than our Thoughts !</h2>
-        <span id="line">CLick On Text to Translate into Urdu</span>
+          <div id="analog" onclick="hide()">
+            <div id="circle"></div>
+            <div id="hhand"></div>
+            <div id="mhand"></div>
+            <div id="shand"></div>
+          </div>
+          <div id="label">
+              <h2 id="lang" onclick="lange()" >Time Is Running Faster than our Thoughts !</h2>
+              <span id="line">CLick On Text to Translate into Urdu</span>
+              <h1 id="click">Click On Clock !</h1>
+          </div>
+
         </div>
 </body>
     <script>
@@ -55,5 +65,31 @@
             document.getElementById("line").innerHTML = "CLick On Text to Translate into Urdu"
           }
         }
+        // function analogstart(){
+          setInterval(()=>{
+            time = new Date()
+            hourTime = time.getHours();
+            minTime = time.getMinutes();
+            secTime = time.getSeconds();
+            hourRotate = hourTime*30 + minTime/2;
+            minRotate = minTime*6;
+            secRotate = secTime*6;
+            hhand.style.transform=`rotate(${hourRotate}deg)`
+            mhand.style.transform=`rotate(${minRotate}deg)`
+            shand.style.transform=`rotate(${secRotate}deg)`
+          },1000)
+        // }
+        function hide(){
+
+        if (document.getElementById("time").style.display == 'none') { 
+          document.getElementById("time").style.display="block"
+          document.getElementById("analog").style.display="none"
+          document.getElementById("click").innerHTML = "Digital Clock"
+        }else{
+          document.getElementById("time").style.display="none"
+          document.getElementById("analog").style.display="block"
+          document.getElementById("click").innerHTML = "Analog Clock"
+        }
+      }
       </script>
 </html>

@@ -1,0 +1,67 @@
+@font-face {
+    font-family:jam;
+    src: url(../Font-for-urdu/Jameel\ Noori\ Nastaleeq\ Kasheeda.ttf);
+}
+body{
+    color: white;
+    background: rgb(19, 19, 19) url(../images/image.png) no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+*{    transition: .5s;}
+.text{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.time{
+    border-radius:20px;
+    padding: 15px;
+    min-width:40%;
+    text-align: center;
+    border: solid 5px;
+}
+#txt , #min , #sec , #amp{
+    transition:.5s;
+    font-size: 100px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: inline-block;
+}
+#lang{
+    font-family: jam;
+    font-weight: lighter;
+    font-size: 40px;
+}
+#amp{
+    font-size: 30px;
+}
+#lang{
+    font-size: 35px;
+}
+@media (max-width:600px){
+    .time{
+        padding: 20px;
+    }
+#txt , #min , #sec , #amp{
+    font-size: 65px
+}
+#amp{
+    font-size: 18px;
+}
+.message{
+    font-size: 15px;
+}
+#lang{
+    font-size: 23px;
+}#line{
+    font-size: 15px;
+}
+}

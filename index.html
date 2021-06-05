@@ -11,6 +11,7 @@
 </head>
 <body onload="startTime()">
         <div class="text">
+          <div id="digAnalClock">
           <div id="time" class="time" onclick="hide()"  style="display: none;">
             <div id="txt"></div>
             <div id="min"></div>
@@ -24,12 +25,12 @@
             <div id="mhand"></div>
             <div id="shand"></div>
           </div>
+        </div>
           <div id="label">
               <h2 id="lang" onclick="lange()" >Time Is Running Faster than our Thoughts !</h2>
               <span id="line">CLick On Text to Translate into Urdu</span>
               <h1 id="click">Click On Clock !</h1>
           </div>
-
         </div>
 </body>
     <script>
@@ -65,7 +66,7 @@
             document.getElementById("line").innerHTML = "CLick On Text to Translate into Urdu"
           }
         }
-        // function analogstart(){
+        // ANALOG CLOCK
           setInterval(()=>{
             time = new Date()
             hourTime = time.getHours();
@@ -78,9 +79,9 @@
             mhand.style.transform=`rotate(${minRotate}deg)`
             shand.style.transform=`rotate(${secRotate}deg)`
           },1000)
-        // }
+          
+          
         function hide(){
-
         if (document.getElementById("time").style.display == 'none') { 
           document.getElementById("time").style.display="block"
           document.getElementById("analog").style.display="none"

@@ -10,6 +10,8 @@
     <title>Clock</title>
 </head>
 <body onload="startTime()">
+  <div id="loader"></div>
+       <div id="anim">
         <div class="text">
           <div id="digAnalClock">
           <div id="time" class="time" onclick="hide()"  style="display: none;">
@@ -32,6 +34,7 @@
               <h1 id="click">Click On Clock !</h1>
           </div>
         </div>
+       </div>
 </body>
     <script>
         function startTime() {
@@ -49,6 +52,8 @@
           document.getElementById('sec').innerHTML = s + "&nbsp;"  ;
           document.getElementById('amp').innerHTML = ' ' + ampm ;
           var t = setTimeout(startTime,1000);
+          var loader = document.getElementById('loader').style.display='none'
+          document.getElementById('anim').style.marginTop="0%";
         }
         function checkTime(i) {
           if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10

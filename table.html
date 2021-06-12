@@ -210,6 +210,9 @@ a.active{
 var n
 while (isNaN(n = prompt("Enter Table Number , You Can Use Number Only")));
 var newNum =Math.floor(Math.random() * 10)
+if(newNum===0){
+    newNum=7
+}
 if(n===null){
     n=newNum
     alert("Why you've Canceled ? Ahm Let Enjoy the Table Of "+ newNum +" ... Lol")

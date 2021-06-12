@@ -5,6 +5,9 @@ function calculate(data){
     if(data === "x"){
         data = "*"
     }
+    if(input.innerText===""){
+        input.innerText = output.innerText
+    }
     switch(data){
          case 'AC': input.innerHTML="" , output.innerHTML="0";
          break

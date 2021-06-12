@@ -4,98 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="./clock-png.png" type="x/icon">
-    <title>Clock</title>
+    <title>javaScript Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./fivicon.png" type="icon">
 </head>
-<body onload="startTime()">
-  <div id="loader"></div>
-       <div id="anim">
-        <div class="text">
-          <div id="digAnalClock">
-          <div id="time" class="time" onclick="hide()"  style="display: none;">
-            <div id="txt"></div>
-            <div id="min"></div>
-            <div id="sec"></div>
-            <div id="amp"></div>
-            <div class="message">Hi , I am your Device's Time !</div>
-          </div>
-          <div id="analog" onclick="hide()">
-            <div id="circle"></div>
-            <div id="hhand"></div>
-            <div id="mhand"></div>
-            <div id="shand"></div>
-          </div>
+<body>
+    <div class="wrapper">
+<div class="links">
+    <a href="./table.html">Table</a>
+    <a class="active" href="./index.html">Calculator</a>
+    <a href="./clock.html">Clock</a>
+</div>
+        <div class="calc">
+            <div class="top"><span>Tahir</span></div>
+            <div class="screen">
+                <h1 id="output">0</h1>
+                <p id="input"></p>
+            </div>
+            <div class="button">
+                <div onclick="calculate('C')" class="btn bg-color"><span>C</span></div>
+                <div onclick="calculate('AC')" class="btn bg-color"><span>AC</span></div>
+                <div onclick="calculate('%')" class="btn bg-color"><span>%</span></div>
+                <div onclick="calculate('/')" class="btn bg-color"><span>/</span></div>
+                <div onclick="calculate('7')" class="btn"><span>7</span></div>
+                <div onclick="calculate('8')" class="btn"><span>8</span></div>
+                <div onclick="calculate('9')" class="btn"><span>9</span></div>
+                <div onclick="calculate('x')" class="btn bg-color"><span>x</span></div>
+                <div onclick="calculate('4')" class="btn"><span>4</span></div>
+                <div onclick="calculate('5')" class="btn"><span>5</span></div>
+                <div onclick="calculate('6')" class="btn"><span>6</span></div>
+                <div onclick="calculate('-')" class="btn bg-color"><span>-</span></div>
+                <div onclick="calculate('1')" class="btn"><span>1</span></div>
+                <div onclick="calculate('2')" class="btn"><span>2</span></div>
+                <div onclick="calculate('3')" class="btn"><span>3</span></div>
+                <div onclick="calculate('+')" class="btn bg-color"><span>+</span></div>
+                <div onclick="calculate('0')" class="btn"><span>0</span></div>
+                <div onclick="calculate('00')" class="btn"><span>00</span></div>
+                <div onclick="calculate('.')" class="btn"><span>.</span></div>
+                <div data-key="35" onclick="calculate('=')" class="btn bg-color"><span>=</span></div>
+            </div>
+            <div class="footer"></div>
         </div>
-          <div id="label">
-              <h2 id="lang" onclick="lange()" >Time Is Running Faster than our Thoughts !</h2>
-              <span id="line">CLick On Text to Translate into Urdu</span>
-              <h1 id="click">Click On Clock !</h1>
-          </div>
-        </div>
-       </div>
+    </div>
 </body>
-    <script>
-        function startTime() {
-          var today = new Date();
-          var h = today.getHours();
-          h = h % 12;
-          h = h ? h : 12;
-          var ampm = h >= 12 ? 'PM' : 'AM ';
-          var m = today.getMinutes();
-          var s = today.getSeconds();
-          m = checkTime(m);
-          s = checkTime(s);
-          document.getElementById('txt').innerHTML = h + ": " ;
-          document.getElementById('min').innerHTML = m + ": " ;
-          document.getElementById('sec').innerHTML = s + "&nbsp;"  ;
-          document.getElementById('amp').innerHTML = ' ' + ampm ;
-          var t = setTimeout(startTime,1000);
-          var loader = document.getElementById('loader').style.opacity="0"
-          document.getElementById('anim').style.marginTop="0%";
-        }
-        function checkTime(i) {
-          if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10
-          return i;
-        } 
-        function lange(){
-          var id = document.getElementById("lang")
-          var d = "! "+"وقت ہماری سوچ سے بھی ذیادہ تیز گزر رہا ہے"
-
-          if(id.innerHTML === "Time Is Running Faster than our Thoughts !"){
-            id.innerHTML = d;
-            document.getElementById("line").innerHTML = "Translated in to Urdu !"
-          }else{
-            id.innerHTML = "Time Is Running Faster than our Thoughts !"
-            document.getElementById("line").innerHTML = "CLick On Text to Translate into Urdu"
-          }
-        }
-        // ANALOG CLOCK
-          setInterval(()=>{
-            time = new Date()
-            hourTime = time.getHours();
-            minTime = time.getMinutes();
-            secTime = time.getSeconds();
-            hourRotate = hourTime*30 + minTime/2;
-            minRotate = minTime*6;
-            secRotate = secTime*6;
-            hhand.style.transform=`rotate(${hourRotate}deg)`
-            mhand.style.transform=`rotate(${minRotate}deg)`
-            shand.style.transform=`rotate(${secRotate}deg)`
-          },1000)
-          
-          
-        function hide(){
-        if (document.getElementById("time").style.display == 'none') { 
-          document.getElementById("time").style.display="block"
-          document.getElementById("analog").style.display="none"
-          document.getElementById("click").innerHTML = "Digital View !"
-        }else{
-          document.getElementById("time").style.display="none"
-          document.getElementById("analog").style.display="block"
-          document.getElementById("click").innerHTML = "Analog View !"
-        }
-      }
-      </script>
+<script src="./script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.1/math.js"></script>
 </html>

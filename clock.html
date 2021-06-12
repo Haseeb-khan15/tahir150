@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="./clock-png.png" type="x/icon">
+    <title>Clock</title>
+    <style>
+        @font-face {
+    font-family:jam;
+    src: url(./Jameel\ Noori\ Nastaleeq\ Kasheeda.ttf);
+}
+#anim {
+    transition: .5s;
+    overflow: hidden;
+    margin-top: 218%;
+}
+body{
+    color: white;
+    background: rgb(19, 19, 19) url(./image.png) no-repeat fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+    transition:none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader{
+    background: url(./loader.gif) no-repeat fixed  center;
+    width: 100%;
+    height: 100vh;
+    transition: .3s;
+    overflow: none;
+    z-index: -1;
+    position: absolute;
+    top: 0%;
+}
+*{    transition: .5s; overflow: hidden;}
+.links {
+    position: absolute;
+    top: 1%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px;
+}
+.links a {
+    margin:0 5px;
+    padding: 1px;
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+}
+a.active{
+    border-bottom: solid 2px;
+    color:white ;
+}
+#digAnalClock {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+.text {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    z-index: 1;
+}
+.time {
+    border-radius: 20px;
+    padding: 30px 15px;
+    text-align: center;
+    border: solid 3px;
+    width: 100%;
+}
+#txt , #min , #sec , #amp{
+    transition:.5s;
+    font-size: 100px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: inline-block;
+}
+#sec{
+    color: rgb(255 43 165);
+}
+#lang{
+    font-family: jam;
+    font-weight: lighter;
+    font-size: 40px;
+}
+#amp {
+    font-size: 30px;
+    color: rgb(54, 147, 253);
+}
+#lang{
+    font-size: 35px;
+}
+#analog{
+    background: url(./c.png) no-repeat;
+    background-size: 100%;
+    width: 400px;
+    height: 292px;
+    position: relative;
+}
+#hhand {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    width: 1.15%;
+    height: 24%;
+    left: 49.5%;
+    top: 26%;
+    transform-origin: bottom;
+    transform: rotate(300deg);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(0 0 0);
+    transition: 1.5s;
+}
+#mhand{
+    position: absolute;
+    background: rgb(255, 255, 255);
+    width: 1%;
+    height: 36%;
+    left: 49.5%;
+    top: 14%;
+    transform-origin: bottom;
+    transform: rotate(60deg);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(0 0 0);
+    transition: 1.5s;
+}
+#shand {
+    position: absolute;
+    background: rgb(255 0 94);
+    width: .2%;
+    height: 38%;
+    left: 49.5%;
+    top: 12%;
+    transform-origin: bottom;
+    transform: rotate(120deg);
+    border-top-left-radius: 20px;
+    transition: none;
+    box-shadow: 0px 0px 5px rgb(0 0 0);
+}
+#circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #74d9ff;
+    border-radius: 50%;
+    top: 46.5%;
+    left: 47.5%;
+    z-index: 1;
+    box-shadow: 0px 0px 3px black;
+}
+h1 {
+    margin-top: 70px;
+}
+#label{
+    text-align: center;
+}
+@media (max-width:600px){
+.time {
+    padding: 23px 10px;
+}
+#txt , #min , #sec , #amp{
+    font-size: 65px
+}
+#amp{
+    font-size: 18px;
+}
+.message{
+    font-size: 15px;
+}
+#lang{
+    font-size: 23px;
+}#line{
+    font-size: 12px;
+}
+}
+    </style>
+</head>
+<body onload="startTime()">
+    <div class="links">
+        <a href="./table.html">Table</a>
+        <a href="./index.html">Calculator</a>
+        <a class="active" href="./clock.html">Clock</a>
+    </div>
+  <div id="loader"></div>
+       <div id="anim">
+        <div class="text">
+          <div id="digAnalClock">
+          <div id="time" class="time" onclick="hide()"  style="display: none;">
+            <div id="txt"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+            <div id="amp"></div>
+            <div class="message">Hi , I am your Device's Time !</div>
+          </div>
+          <div id="analog" onclick="hide()">
+            <div id="circle"></div>
+            <div id="hhand"></div>
+            <div id="mhand"></div>
+            <div id="shand"></div>
+          </div>
+        </div>
+          <div id="label">
+              <h2 id="lang" onclick="lange()" >Time Is Running Faster than our Thoughts !</h2>
+              <span id="line">CLick On Text to Translate into Urdu</span>
+              <h1 id="click">Click On Clock !</h1>
+          </div>
+        </div>
+       </div>
+</body>
+    <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          h = h % 12;
+          h = h ? h : 12;
+          var ampm = h >= 12 ? 'PM' : 'AM ';
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML = h + ": " ;
+          document.getElementById('min').innerHTML = m + ": " ;
+          document.getElementById('sec').innerHTML = s + "&nbsp;"  ;
+          document.getElementById('amp').innerHTML = ' ' + ampm ;
+          var t = setTimeout(startTime,1000);
+          var loader = document.getElementById('loader').style.opacity="0"
+          document.getElementById('anim').style.marginTop="0%";
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10
+          return i;
+        } 
+        function lange(){
+          var id = document.getElementById("lang")
+          var d = "! "+"وقت ہماری سوچ سے بھی ذیادہ تیز گزر رہا ہے"
+
+          if(id.innerHTML === "Time Is Running Faster than our Thoughts !"){
+            id.innerHTML = d;
+            document.getElementById("line").innerHTML = "Translated in to Urdu !"
+          }else{
+            id.innerHTML = "Time Is Running Faster than our Thoughts !"
+            document.getElementById("line").innerHTML = "CLick On Text to Translate into Urdu"
+          }
+        }
+        // ANALOG CLOCK
+          setInterval(()=>{
+            time = new Date()
+            hourTime = time.getHours();
+            minTime = time.getMinutes();
+            secTime = time.getSeconds();
+            hourRotate = hourTime*30 + minTime/2;
+            minRotate = minTime*6;
+            secRotate = secTime*6;
+            hhand.style.transform=`rotate(${hourRotate}deg)`
+            mhand.style.transform=`rotate(${minRotate}deg)`
+            shand.style.transform=`rotate(${secRotate}deg)`
+          },1000)
+          
+          
+        function hide(){
+        if (document.getElementById("time").style.display == 'none') { 
+          document.getElementById("time").style.display="block"
+          document.getElementById("analog").style.display="none"
+          document.getElementById("click").innerHTML = "Digital View !"
+        }else{
+          document.getElementById("time").style.display="none"
+          document.getElementById("analog").style.display="block"
+          document.getElementById("click").innerHTML = "Analog View !"
+        }
+      }
+      </script>
+</html>

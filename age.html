@@ -24,6 +24,7 @@ background: rgb(19, 19, 19) url(./image.png) no-repeat fixed;
 background-size: cover;
 font-family: sans-serif;
 margin: 0%;
+width: 100%;
 padding: 0%;
 transition:none;
 min-height: 90vh;
@@ -124,6 +125,15 @@ a.active{
     font-weight: 600;
     font-size: 31px;
 }
+#dev {
+    position: absolute;
+    bottom: 2%;
+    color: #ffffff;
+    right: 6%;
+    opacity: .4;
+    font-weight: 600;
+    font-size: 21px;
+}
     </style>
     <div id="Age">
         <div class="links">
@@ -152,9 +162,10 @@ a.active{
             <p id="futureAge"></p>
             <p id="underAge" style="display: none;"></p>
             <div id="num">20</div>
+            
             <button onclick="myfunction()" class="btn rt">New</button>
            </div>
-        </div>
+        </div><div id="dev">Developed by Tahir</div>
     </div>
     <script>
         function myfunction()
@@ -232,7 +243,7 @@ a.active{
                 document.getElementById("underAge").innerHTML=("You are Under Aged 😏")
         },2000);
         setTimeout(() => {
-                alert("Aap Pakistan Ky Memar ho Mehnat Karo ! 😏")
+                alert("Aap Pakistan Ky Memaar ho Mehnat Karo ! 😏")
         },3000);
         }else{
             document.getElementById("underAge").style.display = "none"

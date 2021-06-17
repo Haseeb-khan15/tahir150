@@ -15,11 +15,12 @@
 #anim {
     transition: .5s;
     overflow: hidden;
-    margin-top: 218%;
+    margin-bottom: -250%;
+    opacity: 0;
 }
 body{
     color: white;
-    background: rgb(19, 19, 19) url(./image.png) no-repeat;
+    background: rgb(19, 19, 19) url(./image.png) no-repeat fixed;
     background-size: cover;
     font-family: sans-serif;
     margin: 0%;
@@ -28,6 +29,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 #loader{
     background: url(./loader.gif) no-repeat fixed  center;
@@ -238,7 +241,11 @@ h1 {
           document.getElementById('amp').innerHTML = ' ' + ampm ;
           var t = setTimeout(startTime,1000);
           var loader = document.getElementById('loader').style.opacity="0"
-          document.getElementById('anim').style.marginTop="0%";
+          document.getElementById('anim').style.marginBottom="0%";
+          document.getElementById('anim').style.opacity="1"
+          setTimeout(() => {
+            document.body.style.overflow = "auto"
+        },1000);
         }
         function checkTime(i) {
           if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10

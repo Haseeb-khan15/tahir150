@@ -5,7 +5,7 @@ function calculate(data){
     if(data === "x"){
         data = "*"
     }
-    if(input.innerText===""){
+    if(input.innerText==="" && output.innerHTML!=0){
         input.innerText = output.innerText
     }
     switch(data){

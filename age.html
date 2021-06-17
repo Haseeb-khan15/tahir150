@@ -20,7 +20,7 @@
 }
 body{
 color: white;
-background: rgb(19, 19, 19) url(./image.png) no-repeat fixed;
+background: rgb(19, 19, 19) url(./image.png) no-repeat;
 background-size: cover;
 font-family: sans-serif;
 margin: 0%;
@@ -170,7 +170,7 @@ a.active{
     <script>
         function myfunction()
        {
-        var dayNames = ["Monday","Tuedsay","Wednesday","Thursday","Friday","Saturday","Sunday",]
+        var dayNames = ["Sunday" , "Monday","Tuedsay","Wednesday","Thursday","Friday","Saturday",]
         
         var monthNames=["January","Febuary","March","April","May","June","July","August","September","October","November","December",]
 
@@ -242,9 +242,6 @@ a.active{
                 document.getElementById("underAge").style.display = "block"
                 document.getElementById("underAge").innerHTML=("You are Under Aged 😏")
         },2000);
-        setTimeout(() => {
-                alert("Aap Pakistan Ky Memaar ho Mehnat Karo ! 😏")
-        },3000);
         }else{
             document.getElementById("underAge").style.display = "none"
         }

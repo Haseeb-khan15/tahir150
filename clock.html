@@ -20,7 +20,7 @@
 }
 body{
     color: white;
-    background: rgb(19, 19, 19) url(./image.png) no-repeat fixed;
+    background: rgb(19, 19, 19) url(./image.png) no-repeat;
     background-size: cover;
     font-family: sans-serif;
     margin: 0%;
@@ -245,7 +245,7 @@ h1 {
           document.getElementById('anim').style.opacity="1"
           setTimeout(() => {
             document.body.style.overflow = "auto"
-        },1000);
+        },2000);
         }
         function checkTime(i) {
           if (i < 10) {i = "0" + i };  // add zero in front of numbers < 10

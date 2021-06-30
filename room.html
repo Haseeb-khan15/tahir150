@@ -11,7 +11,7 @@
 body{
 background: url(./room.jpg) no-repeat;
 background-size: cover;
-width: 1200px;
+width: 1300px;
 height: 915px;
 font-family: sans-serif;
 }
@@ -157,7 +157,7 @@ font-family: sans-serif;
     </style>
 </head>
 <body>
-    <div id="welcome" class="welcome"><span id="welcomeText" class="WelcomeText">welcome to Tahir's Room</span></div>
+    <div id="welcome" class="welcome"><span id="welcomeText" id="iWantToScrollHere" class="WelcomeText">welcome to Tahir's Room</span></div>
     <div id="cover" class="overlays"></div>
 
 <div class="container">
@@ -197,6 +197,7 @@ font-family: sans-serif;
         element.style.opacity = "0"
         function myfunc(){
 
+if (window.matchMedia("(orientation: portrait)").matches) {
         if(element.style.opacity == "0"){
 
             element.classList.remove('overlays')
@@ -270,11 +271,17 @@ font-family: sans-serif;
         TV.onended = function(){
             video()
         }
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    $('body').css({
-        "-webkit-transform": "rotate(90deg)"
-    }); 
+    function Scrolldown() {
+    window.location.hash = '#iWantToScrollHere';
+    }
+    Scrolldown()
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
+if (mediaQuery.matches) {
+  alert('Please Do Rotate Your Mobile Phone')
 }
+        }else{
+            alert("Please Do Rotate Your Device And Refresh your Page !")
+        }
     </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./fivicon.png" type="icon">
 </head>
-<body>
+<body onload="display()">
     <div class="wrapper">
 <div class="links">
     <a href="./table.html">Table</a>
@@ -16,6 +16,16 @@
     <a href="./clock.html">Clock</a>
     <a href="./age.html">Age</a>
 </div>
+<div id="room">
+<div id="roomAd">
+    <div id="roomBox">
+        <div id="close" onclick="closed()">X</div>
+        <p>Getting Bored ? Come to Tahir's Room , Watch a TV !</p>
+        <button><a href="./room.html" onclick="closed()">Go to Room</a></button>
+    </div>
+</div>
+</div>
+
         <div class="calc">
             <div class="top"><span>Developed by Tahir</span></div>
             <div class="screen">

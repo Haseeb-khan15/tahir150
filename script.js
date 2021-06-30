@@ -1,5 +1,6 @@
 let input = document.getElementById('input')
 let output = document.getElementById('output')
+let divBox = document.getElementById('room')
 
 function calculate(data){
     if(data === "x"){
@@ -19,4 +20,13 @@ function calculate(data){
         break
          default : input.innerHTML += data;
     }
+}
+divBox.style.display = "none"
+function display(){
+    setTimeout(() => {
+        divBox.style.display = "block"
+    }, 2000);
+}
+function closed(){
+    divBox.style.display = "none"
 }

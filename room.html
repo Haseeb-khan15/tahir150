@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/256/house-icon.png" type="icon">
+    <title>Room</title>
+    <style>
+body{
+background: url(./room.jpg) no-repeat;
+background-size: cover;
+font-family: sans-serif;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    transition: .5s;
+}
+.container{
+    position: relative;
+    width: 1200px;
+    height: 915px;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 915px;
+    background: rgba(0, 0, 0, 0.924);
+    z-index: -1;
+    transition: .5s;
+}
+.overlays{
+    background: transparent;
+    transition: .5s;
+}
+#change {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background: rgb(36, 36, 36);
+    color: white;
+    font-weight: 600;
+    transition: .2s;
+    width: 80px;
+    text-align: center;
+}.change:hover{
+    background: rgb(46, 46, 46);
+}.change:active{
+    background: rgb(71, 71, 71);
+}
+.TV, .dummyTv {
+    background: #2727276b;
+    position: absolute;
+    top: 22.3%;
+    right: 10%;
+    width: 420px;
+    border: solid #000000 20px;
+    border-top: solid black 27px;
+    border-bottom: solid black 27px;
+    border-radius: 8px;
+    height: 242.438px;
+    transition: 1.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.dummyTv p{
+    z-index: -1;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.479);
+    text-shadow: white 0px 0px 5px;
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{      text-shadow: rgb(255, 255, 255) 0px 0px 5px;}
+    60%{     text-shadow: rgb(167, 167, 167) 0px 0px 5px;}
+    100%{       text-shadow: rgb(255, 255, 255) 0px 0px 5px;}
+}
+#TV{
+    opacity: 0;
+}
+#TVPower {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 52.2%;
+    right: 28%;
+    cursor: pointer;
+}
+.TVOff{
+    color: red;
+    text-shadow: red 0px 0px 5px;
+    transition: .1s;
+}
+.TVOn{
+    color: green;
+    text-shadow: green 0px 0px 5px;
+    transition: .1s;
+}
+.boxShadow{
+    box-shadow: 0px 0px 150px rgba(255, 255, 255, 0.486);
+}
+.boxShadowNone{
+    box-shadow: none;
+}
+
+#LightsOffText {
+    font-size: 59px;
+    color: rgb(150 149 20);
+    position: absolute;
+    top: 66%;
+    right: 21%;
+    transform: translate(17%,-50%);
+    z-index: 1;
+    font-family: cursive;
+    transition: .5s;
+    display: none;
+    opacity: 0;
+}
+    </style>
+</head>
+<body>
+    <div id="cover" class="overlays"></div>
+
+<div class="container">
+            
+    <div id="LightsOffText">Lights Off</div>
+
+    <div class="dummyTv"><p id="developed">Developed By Tahir</p></div>
+    <video id="TV" class="TV" src="./headshot.mp4"></video>
+    <button onclick="video()" class="TVOff" id="TVPower"><i class="fas fa-power-off"></i></button>
+
+    <span onclick="myfunc()" id="change">Lights off</span>
+
+</div>
+
+    <script>
+
+        var element = document.getElementById('cover')
+        var TV = document.getElementById('TV')
+        var TVButton = document.getElementById('TVPower')
+        LightsOffTexts = document.getElementById('LightsOffText')
+        var developedByTahir = document.getElementById('developed')
+        var button = document.getElementById('change')
+
+        TVButton.classList.add('TVOff')
+
+        element.style.opacity = "0"
+        function myfunc(){
+
+        if(element.style.opacity == "0"){
+
+            element.classList.remove('overlays')
+            element.classList.add('overlay')
+            element.style.opacity = "1"
+            button.innerHTML = "Light On"
+
+            TV.classList.remove('boxShadowNone')
+            TV.classList.add('boxShadow')
+
+        }else if(element.style.opacity == "1"){
+            
+            element.classList.add('overlays')
+            element.style.opacity = "0"
+            TV.classList.add('boxShadowNone')
+            button.innerHTML = "Lights Off"
+        }
+        }
+        
+        function video(){
+
+        if(TV.style.opacity == 0 ){
+
+            TV.style.opacity = "1"
+            developedByTahir.style.opacity = "0"
+            TVButton.classList.add('TVOn')
+            element.style.opacity = "1"
+
+            
+            setTimeout(() => {
+                element.classList.remove('overlays')
+                element.classList.add('overlay')   
+                TV.classList.remove('boxShadowNone')
+                TV.classList.add('boxShadow')
+                LightsOffText.style.display = "block"
+            }, 1500);
+            if(element.style.opacity !== "0"){
+            setTimeout(() => {
+                LightsOffText.style.opacity = "1"
+            },1700);
+            setTimeout(() => {
+                LightsOffText.style.opacity = "0"
+            },3000)
+            setTimeout(() => {
+                LightsOffText.style.display = "none"
+            },3300)
+        }
+
+            setTimeout(() => {
+                TV.play();
+            }, 3500);
+
+        }else if(TV.style.opacity == 1){
+
+            TV.pause();
+            TV.style.opacity = "0"
+            TVButton.classList.remove('TVOn')
+            TVButton.classList.add('TVOff')
+
+            setTimeout(() => {
+            developedByTahir.style.opacity = "1"
+            }, 2000);
+
+            setTimeout(() => {
+            element.classList.add('overlays')
+            }, 3000);
+            }else{
+            TV.pause();
+            }
+        }
+        TV.onended = function(){
+            video()
+        }
+    </script>
+</body>
+</html>

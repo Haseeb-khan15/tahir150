@@ -154,9 +154,41 @@ font-family: sans-serif;
 .welcomeTextRemove{
     opacity: 0;
 }
+#rotate{
+    display: none;
+}
+#rotate{
+background-color: rgb(61, 0, 173);
+font-size: 25px;
+width: 250px;
+font-weight: 600;
+padding: 20px;
+color: white;
+border-radius: 20px;
+text-align:center;
+margin: auto;
+}
+@media screen and (orientation: portrait) and (max-width:600px){
+    #All{
+        display: none;
+    }
+    #rotate{
+    display: block;
+    }
+    body{
+        background: none;
+        width: 100vw;
+        height: 100vh;
+        background: grey;
+        display: flex;
+        align-items: center;
+    }
+}
     </style>
 </head>
 <body>
+    <div id="rotate">Please Do Rotate Your Mobile and Do Zoom Out to Enjoy this !</div>
+    <div id="All">
     <div id="welcome" class="welcome"><span id="welcomeText" id="iWantToScrollHere" class="WelcomeText">welcome to Tahir's Room</span></div>
     <div id="cover" class="overlays"></div>
 
@@ -171,10 +203,8 @@ font-family: sans-serif;
     <span onclick="myfunc()" id="change">Lights off</span>
 
 </div>
-
+</div>
 <script>
-        if (window.matchMedia("(orientation: portrait)").matches) {
-
         var element = document.getElementById('cover')
         var TV = document.getElementById('TV')
         var TVButton = document.getElementById('TVPower')
@@ -275,9 +305,6 @@ font-family: sans-serif;
     window.location.hash = '#iWantToScrollHere';
     }
     Scrolldown()
-}else{
-    alert("Please Do Rotate your Mobile & Refresh this Page...")
-}
     </script>
 </body>
 </html>

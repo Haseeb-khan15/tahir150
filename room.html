@@ -172,7 +172,8 @@ font-family: sans-serif;
 
 </div>
 
-    <script>
+<script>
+        if (window.matchMedia("(orientation: portrait)").matches) {
 
         var element = document.getElementById('cover')
         var TV = document.getElementById('TV')
@@ -197,7 +198,6 @@ font-family: sans-serif;
         element.style.opacity = "0"
         function myfunc(){
 
-if (window.matchMedia("(orientation: portrait)").matches) {
         if(element.style.opacity == "0"){
 
             element.classList.remove('overlays')
@@ -275,13 +275,9 @@ if (window.matchMedia("(orientation: portrait)").matches) {
     window.location.hash = '#iWantToScrollHere';
     }
     Scrolldown()
-    const mediaQuery = window.matchMedia('(max-width: 768px)')
-if (mediaQuery.matches) {
-  alert('Please Do Rotate Your Mobile Phone')
+}else{
+    alert("Please Do Rotate your Mobile & Refresh this Page...")
 }
-        }else{
-            alert("Please Do Rotate Your Device And Refresh your Page !")
-        }
     </script>
 </body>
 </html>

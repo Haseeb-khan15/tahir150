@@ -9,6 +9,7 @@
     <title>Room</title>
     <style>
 body{
+background-color: #2a2a2a;
 background: url(./room.jpg) no-repeat;
 background-size: cover;
 width: 1300px;
@@ -140,7 +141,7 @@ font-family: sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 60px;
     opacity: 1;
     transition: 1s;
 
@@ -164,6 +165,7 @@ color: white;
 border-radius: 20px;
 text-align:center;
 margin: auto;
+line-height: 40px;
 }
 @media screen and (orientation: portrait) and (max-width:600px){
     body{
@@ -178,10 +180,10 @@ margin: auto;
     </style>
 </head>
 <body>
-    <div id="rotate">Please Do Rotate Your Mobile and Do Zoom Out to Enjoy this !</div>
+    <div id="rotate">Please Do Rotate Your Mobile to Enjoy this... !</div>
 
 <div id="WholeContainer">
-    <div id="welcome" class="welcome"><span id="welcomeText" id="iWantToScrollHere" class="WelcomeText">welcome to Tahir's Room</span></div>
+    <div id="welcome" class="welcome"><span id="welcomeText" class="WelcomeText">welcome to Tahir's Room</span></div>
     <div id="cover" class="overlays"></div>
 
 <div class="container">
@@ -256,6 +258,9 @@ function reload()
         }
 
         zoomOutMobile();
+        function Scrolldown(){
+            window.scroll(0,100)
+        }
         Scrolldown()
 
         }
@@ -353,9 +358,6 @@ function reload()
         TV.onended = function(){
             video()
         }
-    function Scrolldown() {
-    window.location.hash = '#iWantToScrollHere';
-    }
 
     </script>
 </body>

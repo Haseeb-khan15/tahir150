@@ -9,11 +9,8 @@
     <title>Room</title>
     <style>
 body{
-background-color: #2a2a2a;
 background: url(./room.jpg) no-repeat;
 background-size: cover;
-width: 1300px;
-height: 915px;
 font-family: sans-serif;
 }
 *{
@@ -28,7 +25,7 @@ font-family: sans-serif;
 }
 .overlay{
     position: absolute;
-    width: 1300px;
+    width: 100%;
     height: 915px;
     background: rgba(0, 0, 0, 0.924);
     z-index: -1;
@@ -135,13 +132,13 @@ font-family: sans-serif;
     background-color: black;
     color: white;
     font-weight: 600;
-    width: 1300px;
+    width: 100%;
     height: 915px;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    font-size: 30px;
     opacity: 1;
     transition: 1s;
 
@@ -155,34 +152,9 @@ font-family: sans-serif;
 .welcomeTextRemove{
     opacity: 0;
 }
-#rotate{
-background-color: rgb(61, 0, 173);
-font-size: 25px;
-width: 250px;
-font-weight: 600;
-padding: 20px;
-color: white;
-border-radius: 20px;
-text-align:center;
-margin: auto;
-line-height: 40px;
-}
-@media screen and (orientation: portrait) and (max-width:600px){
-    body{
-        background: none;
-        width: 100vw;
-        height: 100vh;
-        background: grey;
-        display: flex;
-        align-items: center;
-    }
-}
     </style>
 </head>
 <body>
-    <div id="rotate">Please Do Rotate Your Mobile to Enjoy this... !</div>
-
-<div id="WholeContainer">
     <div id="welcome" class="welcome"><span id="welcomeText" class="WelcomeText">welcome to Tahir's Room</span></div>
     <div id="cover" class="overlays"></div>
 
@@ -194,79 +166,20 @@ line-height: 40px;
     <video id="TV" class="TV" src="./headshot.mp4"></video>
     <button onclick="video()" class="TVOff" id="TVPower"><i class="fas fa-power-off"></i></button>
 
-    <span onclick="myfunc()" id="change">Lights Off</span>
+    <span onclick="myfunc()" id="change">Lights off</span>
 
 </div>
-</div>
-<script>
 
-function reload()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem('firstLoad');
-  }
-};
+    <script>
 
-    
         var element = document.getElementById('cover')
         var TV = document.getElementById('TV')
         var TVButton = document.getElementById('TVPower')
-        var LightsOffTexts = document.getElementById('LightsOffText')
+        LightsOffTexts = document.getElementById('LightsOffText')
         var developedByTahir = document.getElementById('developed')
         var button = document.getElementById('change')
         var welcome = document.getElementById('welcome')
         var welcomeText = document.getElementById('welcomeText')
-
-        let rotateDiv = document.getElementById('WholeContainer')
-        let y = window.matchMedia('(orientation: portrait)');
-
-        var message = document.getElementById('rotate')
-        var x = window.matchMedia("(max-width: 600px)")
-        myFunction(x) // Call listener function at run time
-        x.addListener(myFunction) // Attach listener function on state changes
-
-        if(y){
-            console.log("Portrait Mode !")
-        }
-
-
-                function myFunction(x) {
-        if (x.matches && y) { // If media query matches
-            rotateDiv.style.display = "none"
-            console.log("Media query Matched !")
-            message.style.display = "block"
-        } else if(!x.matches) {
-            rotateDiv.style.display = "block"
-            console.log("Media query Removed !")
-            message.style.display = "none"
-            reload()
-            Onstart()
-            function zoomOutMobile() {
-        var viewport = document.querySelector('meta[name="viewport"]');
-
-        if ( viewport ) {
-            viewport.content = "initial-scale=0.1";
-            viewport.content = "width=1200";
-        }
-        }
-
-        zoomOutMobile();
-        function Scrolldown(){
-            window.scroll(0,100)
-        }
-        Scrolldown()
-
-        }
-        }
-
-            function Onstart(){
         setTimeout(() => {
             welcome.classList.add('welcomeRemove')
         },3000);
@@ -276,13 +189,10 @@ function reload()
         setTimeout(() => {
             welcome.style.display = "none"
         },3700);
-    }
 
         TVButton.classList.add('TVOff')
 
         element.style.opacity = "0"
-
-
         function myfunc(){
 
         if(element.style.opacity == "0"){
@@ -358,7 +268,6 @@ function reload()
         TV.onended = function(){
             video()
         }
-
     </script>
 </body>
 </html>

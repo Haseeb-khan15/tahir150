@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300&display=swap" rel="stylesheet">
     <link rel = "icon" href = "https://www.pngarts.com/files/9/King-Black-Crown-PNG-HD-Quality.png" type = "image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>Table - Tahir</title>
     <style>
-
-body{
-    color: white;
-    background: rgb(19, 19, 19) url(./image.png) no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    font-family: 'Biryani', sans-serif;
-    margin: 0%;
-    padding: 0%;
-    min-height: 100vh;
+html,body{
+    scroll-behavior: smooth;
 }
+body{
+color: white;
+background: rgb(19, 19, 19) url(./image.png) no-repeat;
+background-size: cover;
+overflow-x: hidden;
+font-family: 'Biryani', sans-serif;
+margin: 0%;
+padding: 0%;
+min-height: 100vh;
+}
+
 *{margin: 0%;padding: 0%;    transition: .5s;}
 .table {
     display: flex;
@@ -62,9 +66,9 @@ a.active{
     font-weight: 600;
     line-height: 55px;
     font-size: 39px;
-    background-color: rgba(61, 61, 61, 0.329);
-    background: rgba( 0, 0, 0, 0.10 );
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(34, 34, 34, 0.219);
+    background: rgba(0, 0, 0, 0.075);
+    background-color: rgba(112, 111, 111, 0.096);
     box-shadow: 12px 11px 20px rgba(0, 0, 0, 0.301);
     backdrop-filter: blur( 0px );
     -webkit-backdrop-filter: blur( 1.0px );
@@ -75,11 +79,17 @@ a.active{
     border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
     /* box-shadow: 0px 0px 30px rgb(60 60 60); */
 }
-.finaltablediv{position: relative;}
+.finaltablediv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #top {
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
+    top: 40%;
     left: 50%;
     color: #ffffff63;
     opacity: .4;
@@ -87,24 +97,6 @@ a.active{
     text-shadow: 5px 5px 15px rgb(0, 0, 0);
     z-index: -1;
     text-align: center;
-}
-#bottom {
-    margin-top: 34px;
-    font-size: 21px;
-    font-weight: bold;
-    cursor: pointer;
-    animation: bottom 1.5s 3s infinite;
-}
-@keyframes bottom {
-    0%, 100% {
-        color: rgb(255, 255, 255);
-    }
-    50% {
-        color: rgb(122, 122, 122);
-    }
-}
-#bottom:hover{
-    color: rgb(139, 139, 139);animation: none;
 }
 .kaisa{
     font-size: 15px;
@@ -148,6 +140,69 @@ a.active{
     font-size: 15px;
     transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-8deg, 0deg);
 }
+#inputTableParent{
+    background-color: rgba(34, 34, 34, 0.219);
+    background: rgba(0, 0, 0, 0.075);
+    background-color: rgba(112, 111, 111, 0.096);
+    box-shadow: 12px 11px 20px rgba(0, 0, 0, 0.301);
+    backdrop-filter: blur( 0px );
+    -webkit-backdrop-filter: blur( 1.0px );
+    border-radius: 10px;
+    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-left: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-right: 1px solid rgba( 255, 255, 255, 0.08 );
+    border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
+    margin-top: 30px;
+}
+#newTable{
+    text-align: center;
+    position: relative;
+    height: 122px;
+    border-radius: 7px;
+    padding: 8px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#inputBox{
+    width: 275px;
+    /* background-color: aliceblue; */
+    margin-bottom: 5px;
+}
+#inputBox input{
+    outline: none;
+    border: none;   
+    border: 2px solid rgba(255, 255, 255, 0.26) ;
+    font-size:18px;
+    background: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+}
+#inputBox input::placeholder{
+    color: rgba(255, 255, 255, 0.404);
+}
+button{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.158);
+    color: rgba(255, 255, 255, 0.438);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer
+}
+#checkParent{
+    overflow: hidden;
+}
+#check{
+    color: rgba(214, 214, 214, 0.664);
+    font-weight: 600;
+    margin-top: -20px;
+}
 @media only screen and (max-width: 400px) {
     h1, h2 {
         margin: 8px 0;
@@ -165,12 +220,9 @@ a.active{
         line-height: 55px;
         font-size: 39px;
         font-size: 30px;
+        background-color: rgba(61, 61, 61, 0.329);
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.527);
     }
-    #bottom {
-        margin-top: 31px;
-    }
-    
 }  
 
 @media only screen and (max-width: 800px) {
@@ -178,15 +230,25 @@ a.active{
     #jstableNumber {
         font-size: 20px;
     }
-    #bottom{
-        margin-top: 40px;
-    }
     
 }  
+#tags{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.tag{
+    padding: 3px 15px;
+    background-color: rgba(245, 222, 179, 0.15);
+    color: rgba(255, 255, 255, 0.541);
+    margin: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
-</body>
 <div class="table">
     <div class="links">
         <a class="active" href="./table.html">Table</a>
@@ -196,34 +258,74 @@ a.active{
     </div>
     <h1>Table Program</h1>
     <h2 id="jstableNumber">Please Refresh & Enter Table Number</h1>
+        <div id="tags">
+            <p>Suggestions :</p>
+            <p id="tag1" class="tag" onclick="mytag1()">1</p>
+            <p id="tag2" class="tag" onclick="mytag2()">1</p>
+            <p id="tag3" class="tag" onclick="mytag3()">1</p>
+        </div>
         <div class="finaltablediv">
+
             <p id="finalTable"></p>
             <span id="top"></span>
+
+            
+            <div id="inputTableParent">
+                <div id="newTable">
+
+                    <div id="inputBox">
+                        <input type="text" id="input" placeholder="Enter Table Number">
+                    </div>
+                    <div id="checkParent">         
+                        <p id="check">Enter a Table Number</p>
+                    </div>
+
+                    <button id="button" onclick="newValue()">OKay !</button>
+                 </div>
+                 
+            </div>
+
         </div>
-        <p id="bottom" onclick="reload()">Tap here For a New Table</p>
-    </div>
+
+</div>
+
     <p class="tahir">Programmed By Tahir </p>
     <p class="kaisa">Kesa 😎</p>
     <p class="kaise">😎🔥</p>
 <script>
     var br = "<br>"
-var n
-while (isNaN(n = prompt("Enter Table Number , You Can Use Number Only")));
-var newNum =Math.floor(Math.random() * 10)
-if(newNum===0){
-    newNum=7
-}
-if(n===null){
-    n=newNum
-    alert("Why you've Canceled ? Ahm Let Enjoy the Table Of "+ newNum +" ... Lol")
-}else if(n===""){
-    n=newNum
-    alert("you have left the box empty , We are showing you the Table of " + newNum +"...")
-}
-var d="Showing the Table of Number "+n;
-document.getElementById("jstableNumber").innerHTML = d
-document.getElementById("top").innerHTML = n
+var n = 2;
+table()
 
+check = document.getElementById('check');
+var input = document.getElementById('input');
+input.addEventListener("keyup" , function(){
+    n = input.value
+    if(isNaN(n)){
+        check.innerHTML = "Not a valid Number"
+        check.style.marginTop = "0"
+    }else{
+        check.innerHTML = ""
+        check.style.marginTop = "-20px"
+    }
+})
+
+
+function newValue(){
+console.log(n)
+if(isNaN(n) || n == "" || n == " "){
+    check.innerHTML = "Enter a Table Number !"
+    check.style.marginTop = "0"
+    console.log("Not a valid Number")
+    n = input.value
+}else{
+    table()
+}
+}
+
+function table(){
+    var d="Showing the Table of Number "+n;
+    document.getElementById("jstableNumber").innerHTML = d
 var one = (n + " x " + 1 + " &nbsp; " + " = " + " &nbsp; " + + n*1)+"<br/>"
 var two = (n + " x " + 2 +  " &nbsp; " + " = " + " &nbsp; " + n*2)+"<br/>"
 var three = (n + " x " + 3 +  " &nbsp; " + " = " + " &nbsp; " + n*3)+"<br/>"
@@ -235,10 +337,45 @@ var eight = (n + " x " + 8 +  " &nbsp; " + " = " + " &nbsp; " + n*8)+"<br/>"
 var nine = (n + " x " + 9 +  " &nbsp; " + " = " + " &nbsp; " + n*9)+"<br/>"
 var ten = (n + " x " + 10 + " = " +  " &nbsp; " +  n*10)
 
-Table = [one + two + three + four + five + six + seven + eight + nine + ten]
-document.getElementById("finalTable").innerHTML=Table
-function reload(){
-    location.reload();
+    finalTable.style.opacity = ".3"
+    document.getElementById("top").style.opacity = ".1"
+
+    setTimeout(() => {
+
+        document.getElementById("top").innerHTML = n
+        Table = [one + two + three + four + five + six + seven + eight + nine + ten]
+        finalTable.innerHTML=Table
+        finalTable.style.opacity = "1"
+        document.getElementById("top").style.opacity = ".4"
+
+    },400);
 }
+var tag1 = document.getElementById('tag1');
+var tag2= document.getElementById('tag2');
+var tag3 = document.getElementById('tag3');
+
+var random = Math.ceil((Math.random()*20))
+tag1.innerHTML = random;
+random = Math.ceil((Math.random()*20))
+tag2.innerHTML = random;
+random = Math.ceil((Math.random()*20))
+tag3.innerHTML = random;
+
+function mytag1(){
+    n = tag1.innerHTML;
+    table()
+}
+function mytag2(){
+    n = tag2.innerHTML;
+    table()
+}function mytag3(){
+    n = tag3.innerHTML;
+    table()
+}
+setTimeout(() => {
+    window.scroll(0,250)  
+}, 500);
 </script>
+</body>
+
 </html>

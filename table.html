@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@300&display=swap" rel="stylesheet">
     <link rel = "icon" href = "https://www.pngarts.com/files/9/King-Black-Crown-PNG-HD-Quality.png" type = "image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>Table - Tahir</title>
     <style>
@@ -159,7 +160,7 @@ a.active{
     position: relative;
     height: 122px;
     border-radius: 7px;
-    padding: 8px 0px;
+    padding: 8px 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,7 +168,7 @@ a.active{
 
 }
 #inputBox{
-    width: 275px;
+    width: 250px;
     /* background-color: aliceblue; */
     margin-bottom: 5px;
 }
@@ -180,6 +181,7 @@ a.active{
     border-radius: 5px;
     color: white;
     padding: 5px 10px;
+    width: 80%;
 }
 #inputBox input::placeholder{
     color: rgba(255, 255, 255, 0.404);
@@ -246,6 +248,12 @@ button{
     border-radius: 15px;
     cursor: pointer;
 }
+.edit{
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    background: transparent;
+}
     </style>
 </head>
 <body>
@@ -268,12 +276,13 @@ button{
 
             <p id="finalTable"></p>
             <span id="top"></span>
+            <a href="#inputBox" onclick="inputFocus()" class="tag edit"><i class="far fa-edit"></i></a>
 
             
             <div id="inputTableParent">
                 <div id="newTable">
 
-                    <div id="inputBox">
+                    <div id="inputBox" >
                         <input type="text" id="input" placeholder="Enter Table Number">
                     </div>
                     <div id="checkParent">         
@@ -317,12 +326,17 @@ if(isNaN(n) || n == "" || n == " "){
     check.innerHTML = "Enter a Table Number !"
     check.style.marginTop = "0"
     console.log("Not a valid Number")
-    n = input.value
 }else{
+    n = input.value
     table()
 }
 }
-
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   newValue()
+  }
+});
 function table(){
     var d="Showing the Table of Number "+n;
     document.getElementById("jstableNumber").innerHTML = d
@@ -350,6 +364,7 @@ var ten = (n + " x " + 10 + " = " +  " &nbsp; " +  n*10)
 
     },400);
 }
+
 var tag1 = document.getElementById('tag1');
 var tag2= document.getElementById('tag2');
 var tag3 = document.getElementById('tag3');
@@ -372,10 +387,10 @@ function mytag2(){
     n = tag3.innerHTML;
     table()
 }
-setTimeout(() => {
-    window.scroll(0,250)  
-}, 500);
+function inputFocus(){
+    input.focus()
+
+}
 </script>
 </body>
-
 </html>

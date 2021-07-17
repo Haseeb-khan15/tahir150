@@ -44,10 +44,12 @@ h1, h2 {
     position: absolute;
     top: 1%;
     text-align: center;
+    left: 2%;
     font-weight: 600;
-    font-size: 18px;
-    padding: 5px;
+    font-size: 15px;
+    padding: 4px;
     font-family: sans-serif;
+    z-index: 11;
 }
 .links a {
     margin:0 5px;
@@ -59,6 +61,58 @@ a.active{
     border-bottom: solid 2px;
     color:white ;
 }
+#accountDP{
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 205px;
+    z-index: 10;
+    font-weight: 600;
+}
+#accountName{  
+    background:rgb(61, 43, 226);
+    border-radius: 50%;
+    padding: 0px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.308);
+    user-select: none;
+}
+#accountBox{
+    width: 210px;
+    background: rgb(41, 41, 41);
+    text-align: left;
+    align-self: flex-start;
+    border-radius: 8px;
+    display: none;
+}
+#accountBox ul{
+    list-style: none;
+    max-width: 100%;
+    color: #86e6ff;
+    padding: 10px 0;
+    width: 185px;
+}
+#accountBox ul li{
+    width: 100%;
+    background: rgba(29, 29, 29, 0.671);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 12px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+#accountBox ul li:hover{
+    background: rgba(66, 66, 66, 0.349);
+}
 #finalTable {
     border-radius: 20px;
     padding: 23px 50px;
@@ -69,7 +123,7 @@ a.active{
     font-size: 39px;
     background-color: rgba(34, 34, 34, 0.219);
     background: rgba(0, 0, 0, 0.075);
-    background-color: rgba(90, 90, 90, 0.171);
+    background-color: rgba(112, 111, 111, 0.096);
     box-shadow: 12px 11px 20px rgba(0, 0, 0, 0.301);
     backdrop-filter: blur( 0px );
     -webkit-backdrop-filter: blur( 1.0px );
@@ -142,9 +196,9 @@ a.active{
     transform: scale(1) rotate(0deg) translate(0px, 0px) skew(-8deg, 0deg);
 }
 #inputTableParent{
-    background-color: rgba(93, 93, 93, 0.226);
-    background: rgba(70, 70, 70, 0.075);
-    background-color: rgba(90, 90, 90, 0.171);
+    background-color: rgba(34, 34, 34, 0.219);
+    background: rgba(0, 0, 0, 0.075);
+    background-color: rgba(112, 111, 111, 0.096);
     box-shadow: 12px 11px 20px rgba(0, 0, 0, 0.301);
     backdrop-filter: blur( 0px );
     -webkit-backdrop-filter: blur( 1.0px );
@@ -264,6 +318,16 @@ button{
         <a href="./clock.html">Clock</a>
         <a href="./age.html">Age</a>
     </div>
+    <div id="accountDP">
+        <div id="accountName" onclick="showMenu()">T</div>
+        <div id="accountBox" style="display: none;">
+            <ul>
+                <li><a id="accountUserName">Tahir</a></li>
+                <li><a id="accountEmail">Tahirtv.islam@gmail.com</a></li>
+                <li><a id="accountLogout"><i class="far fa-arrow-alt-circle-left"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
     <h1>Table Program</h1>
     <h2 id="jstableNumber">Please Refresh & Enter Table Number</h1>
         <div id="tags">
@@ -276,7 +340,7 @@ button{
 
             <p id="finalTable"></p>
             <span id="top"></span>
-            <a href="#inputBox" onclick="inputFocus()" class="tag edit"><i class="far fa-edit"></i></a>
+            <a href="#inputBox" class="tag edit"><i class="far fa-edit"></i></a>
 
             
             <div id="inputTableParent">
@@ -290,7 +354,6 @@ button{
                     </div>
 
                     <button id="button" onclick="newValue()">OKay !</button>
-                    <a id="click" href="#finalTable"></a>
                  </div>
                  
             </div>
@@ -323,24 +386,16 @@ input.addEventListener("keyup" , function(){
 
 function newValue(){
 console.log(n)
-n = input.value
 if(isNaN(n) || n == "" || n == " "){
     check.innerHTML = "Enter a Table Number !"
     check.style.marginTop = "0"
     console.log("Not a valid Number")
 }else{
+    n = input.value
     table()
-    var click = document.getElementById('click');
-    setTimeout(() => {
-        click.click()       
-    }, 500);
 }
 }
-input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-   newValue()
-  }
-});
+
 function table(){
     var d="Showing the Table of Number "+n;
     document.getElementById("jstableNumber").innerHTML = d
@@ -368,7 +423,6 @@ var ten = (n + " x " + 10 + " = " +  " &nbsp; " +  n*10)
 
     },400);
 }
-
 var tag1 = document.getElementById('tag1');
 var tag2= document.getElementById('tag2');
 var tag3 = document.getElementById('tag3');
@@ -391,9 +445,37 @@ function mytag2(){
     n = tag3.innerHTML;
     table()
 }
-function inputFocus(){
-    input.focus()
-
+// Check If Login or Not...
+if(localStorage.getItem('login') == "true"){
+    // alert("Account saved !")
+    var accountName = document.getElementById('accountName');
+    var accountBox = document.getElementById('accountBox');
+    var accountUserName = document.getElementById('accountUserName');
+    var accountEmail = document.getElementById('accountEmail');
+    var accountLogout = document.getElementById('accountLogout');
+    
+    function showMenu(){
+        if(accountBox.style.display == "none"){
+            accountBox.style.display = "block"
+        }else{
+            accountBox.style.display = "none"
+        }
+    }
+    accountName.innerHTML = CapitalFirstLetter(localStorage.nm.slice(0,1))
+    accountUserName.innerHTML ="Hi , " + CapitalFirstLetter(localStorage.nm)
+    accountEmail.innerHTML = CapitalFirstLetter(localStorage.email)
+    function CapitalFirstLetter(word){
+        word = word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase()
+        return word
+    }
+    
+    accountLogout.addEventListener('click' , function(){
+        localStorage.login = "false"
+        window.location.reload()
+    })
+}
+else{
+    window.location.href = "login.html"
 }
 </script>
 </body>

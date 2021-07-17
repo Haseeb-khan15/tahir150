@@ -30,3 +30,37 @@ function display(){
 function closed(){
     divBox.style.display = "none"
 }
+
+// Check If Login or Not...
+if(localStorage.getItem('login') == "true"){
+    // alert("Account saved !")
+    var accountName = document.getElementById('accountName');
+    var accountBox = document.getElementById('accountBox');
+    var accountUserName = document.getElementById('accountUserName');
+    var accountEmail = document.getElementById('accountEmail');
+    var accountLogout = document.getElementById('accountLogout');
+    
+    function showMenu(){
+        if(accountBox.style.display == "none"){
+            accountBox.style.display = "block"
+        }else{
+            accountBox.style.display = "none"
+        }
+    }
+    accountName.innerHTML = CapitalFirstLetter(localStorage.nm.slice(0,1))
+    accountUserName.innerHTML ="Hi , " + CapitalFirstLetter(localStorage.nm)
+    accountEmail.innerHTML = CapitalFirstLetter(localStorage.email)
+    function CapitalFirstLetter(word){
+        word = word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase()
+        return word
+    }
+    
+    accountLogout.addEventListener('click' , function(){
+        localStorage.login = "false"
+        window.location.reload()
+    })
+}
+else{
+    window.location.href = "login.html"
+}
+

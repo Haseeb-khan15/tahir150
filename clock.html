@@ -47,15 +47,70 @@ body{
     position: absolute;
     top: 1%;
     text-align: center;
+    left: 2%;
     font-weight: 600;
-    font-size: 18px;
-    padding: 5px;
+    font-size: 15px;
+    padding: 4px;
+    z-index: 11;
 }
 .links a {
     margin:0 5px;
     padding: 1px;
     text-decoration: none;
     color: rgb(216, 216, 216);
+}
+
+#accountDP{
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 205px;
+    z-index: 10;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+#accountName{  
+    background:rgb(61, 43, 226);
+    border-radius: 50%;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.308);
+    user-select: none;
+}
+#accountBox{
+    width: 210px;
+    background: rgb(41, 41, 41);
+    text-align: left;
+    align-self: flex-start;
+    border-radius: 8px;
+    display: none;
+}
+#accountBox ul{
+    list-style: none;
+    width: 185px;
+    padding: 10px 0;
+}
+#accountBox ul li{
+    width: 100%;
+    background: rgba(29, 29, 29, 0.671);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 12px;
+    margin: 15px 0;
+    color: #86e6ff;
+    cursor: pointer;
+}
+#accountBox ul li:hover{
+    background: rgba(66, 66, 66, 0.349);
 }
 a.active{
     border-bottom: solid 2px;
@@ -198,6 +253,16 @@ h1 {
         <a class="active" href="./clock.html">Clock</a>
         <a href="./age.html">Age</a>
     </div>
+        <div id="accountDP">
+        <div id="accountName" onclick="showMenu()">T</div>
+        <div id="accountBox" style="display: none;">
+            <ul>
+                <li><a id="accountUserName">Tahir</a></li>
+                <li><a id="accountEmail">Tahirtv.islam@gmail.com</a></li>
+                <li><a id="accountLogout"><i class="far fa-arrow-alt-circle-left"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
   <div id="loader"></div>
        <div id="anim">
         <div class="text">
@@ -289,5 +354,37 @@ h1 {
           document.getElementById("click").innerHTML = "Analog View !"
         }
       }
+      // Check If Login or Not...
+if(localStorage.getItem('login') == "true"){
+    // alert("Account saved !")
+    var accountName = document.getElementById('accountName');
+    var accountBox = document.getElementById('accountBox');
+    var accountUserName = document.getElementById('accountUserName');
+    var accountEmail = document.getElementById('accountEmail');
+    var accountLogout = document.getElementById('accountLogout');
+    
+    function showMenu(){
+        if(accountBox.style.display == "none"){
+            accountBox.style.display = "block"
+        }else{
+            accountBox.style.display = "none"
+        }
+    }
+    accountName.innerHTML = CapitalFirstLetter(localStorage.nm.slice(0,1))
+    accountUserName.innerHTML ="Hi , " + CapitalFirstLetter(localStorage.nm)
+    accountEmail.innerHTML = CapitalFirstLetter(localStorage.email)
+    function CapitalFirstLetter(word){
+        word = word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase()
+        return word
+    }
+    
+    accountLogout.addEventListener('click' , function(){
+        localStorage.login = "false"
+        window.location.reload()
+    })
+}
+else{
+    window.location.href = "login.html"
+}
       </script>
 </html>

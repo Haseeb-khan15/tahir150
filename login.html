@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in Or Sign up - Tahir's Web</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="https://iconape.com/wp-content/png_logo_vector/user-circle.png">
+    <style>
+        *{
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+    transition: .3s;
+}
+body{
+    background: rgb(31, 31, 31);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family:sans-serif;
+}
+#formContainer{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    /* display: none; */
+}
+button{
+    padding: 20px;
+}
+#forms{
+    width: 310px;
+    /* border: solid; */
+    padding: 10px;
+    /* padding-top: 30px; */
+    border-radius: 5px;
+    background-color: rgb(75, 75, 75);
+    text-align: center;
+}
+#loginForm , #resetForm{
+    display: none;
+}
+h2{
+    color: rgba(255, 255, 255, 0.664);
+    padding: 10px;
+    margin: 10px;
+}
+#registerForm input, #loginForm input ,#resetForm input{
+    width: 275px;
+    margin: 6px 0;
+    padding: 10px 0;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(100, 100, 100);
+    box-shadow: 0px 0px 5px rgb(65, 65, 65); 
+    color: white;
+    font-weight: 600;
+}
+#registerForm input::placeholder, #loginForm input::placeholder , #resetForm input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: normal;
+}
+#registerForm button, #loginForm button , #resetForm button{
+    border: none;
+    outline: none;
+    background-color: white;
+    background-color: rgb(100, 100, 100);
+    box-shadow: 0px 0px 5px rgb(65, 65, 65); 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+#registerForm #notice , #notice2{
+    line-height: 20px;
+    color: rgba(0, 202, 27, 0.808);
+    font-weight: bold;
+    margin: 15px 0;
+}
+#notice2{
+    color: rgb(245, 45, 45);
+}
+#notice3{
+    color: rgb(233, 218, 10);
+}
+.password{
+    position: relative;
+}
+.showHide{
+    position: absolute;
+    right: 10px;
+    transform: translate(0,-50%);
+    top: 50%;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.698);
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}
+/* .hide{
+    display: none;
+} */
+    </style>
+</head>
+<body>
+    <button onclick="formContainer.style.display = 'block'">Login Or SignUp</button>
+<div id="formContainer">
+    <div id="forms">
+        <form id="registerForm">
+            <h2>Register To Tahir's Web</h2>
+            <input type="text" id="nm" placeholder="Enter your User Name" required>
+            <input type="email" id="email" placeholder="Enter your Email address" required>
+        <span class="password">
+            <input type="password" minlength="5" maxlength="10"  id="pw" placeholder="Enter your Password" required>
+            <span class="showHide">
+                <span class="hide" onclick="showHide()"><i class="fas fa-eye-slash"></i></span>
+                <span style="display: none;" class="show" onclick="showHide()"><i class="fas fa-eye"></i></span>
+            </span>
+        </span>
+            <button  id="submit" onclick="check()">Sign Up</button>
+            <p id="notice">Note : This account is not a public account it will Works Only in your Device.So please Remember your Info.</p>
+        </form>
+        <form id="loginForm">
+            <h2>Log In To Tahir's Web</h2>
+            <input type="text" id="userName" placeholder="Enter your UserName">
+        <span class="password">
+            <input type="password"  id="password" placeholder="Enter your password">
+            <span class="showHide">
+                <span class="hide" onclick="showHide()"><i class="fas fa-eye-slash"></i></span>
+                <span style="display: none;" class="show" onclick="showHide()"><i class="fas fa-eye"></i></span>
+            </span>
+        </span>
+        <p id="notice2"></p>
+        <span style="display: block; margin: 5px;" onclick="forgot()"><a id="forgot" >Forgot Password</a></span> 
+            <button type="button" onclick="LoggedIn()">Logn In</button>
+        </form>
+        <form id="resetForm">
+            <h2 >Reset Your Password</h2>
+            <input type="text" id="resetEmail" placeholder="Enter your Email address" autocomplete="off">
+            <p id="notice3" style="margin: 10px;">Enter Your Email Address to Show your Password...</p>
+            <button onclick="Reset()" id="resetButton" type="button">Show..</button>
+        </form>
+    </div>
+</div>
+    <script>
+        // Show hide password..
+        function showHide(){
+            if(document.getElementById('pw').type === 'password' || document.getElementById('password').type === 'password'){
+                document.getElementById('pw').type = 'text'
+                document.getElementById('password').type = 'text'
+                document.querySelectorAll('.hide')[0].style.display = "none"
+                document.querySelectorAll('.show')[0].style.display = "block"
+                document.querySelectorAll('.hide')[1].style.display = "none"
+                document.querySelectorAll('.show')[1].style.display = "block"
+
+            }else{
+                document.getElementById('pw').type = 'password'
+                document.getElementById('password').type = 'password'
+                document.querySelectorAll('.show')[0].style.display = "none"
+                document.querySelectorAll('.hide')[0].style.display = "block"
+                document.querySelectorAll('.show')[1].style.display = "none"
+                document.querySelectorAll('.hide')[1].style.display = "block"
+            }
+        }
+        // here all inputs Password Will be shown and hide with icon !
+
+
+        //Getting Forms id's...To Display.
+        var registorForm = document.getElementById('registerForm');
+        var loginForm = document.getElementById('loginForm');
+        var resetForm = document.getElementById('resetForm');
+
+        // Getting Value Of input to registor
+        var nm = document.getElementById('nm');
+        var pw = document.getElementById('pw');
+        var email = document.getElementById('email');
+        var notice = document.getElementById('notice');
+        var notice2 = document.getElementById('notice2');
+        var notice3 = document.getElementById('notice3');
+        
+        // Checking If Valid then Save to Storage
+        function check(){
+            if(!isNaN(nm.value)){
+                alert('Please Enter a Valid User Name , Use Alphabets !');
+            }else if(pw.value.length < 5){
+                // Do not Store
+            }
+            else{
+            store()
+        }
+        }
+        function store(){
+            localStorage.setItem('nm' , nm.value);
+            localStorage.setItem('pw' , pw.value);
+            localStorage.setItem('email' , (email.value).toLowerCase());
+            localStorage.setItem('i' , 0)
+        }
+        function displayRegistorForm(){
+            registorForm.style.display = "block"
+            loginForm.style.display = "none"
+            resetForm.style.display = "none"
+        }
+        function displayLoginForm(){
+            registorForm.style.display = "none"
+            loginForm.style.display = "block"
+            resetForm.style.display = "none"
+        }
+        displayRegistorForm()
+        if(localStorage.getItem('nm') != undefined && localStorage.getItem('pw') != undefined ){
+            displayLoginForm();
+        }else{
+            alert("Register your account First !")
+        }
+        // Check UserName and Password.
+        function LoggedIn(){
+            var userName = (document.getElementById('userName').value);
+            var password = (document.getElementById('password').value);
+            if(userName == localStorage.getItem('nm') && password == localStorage.getItem('pw')){
+                localStorage.setItem('login' , true)
+                notice2.style.color = "rgba(181, 235, 5, 0.808)";
+                notice2.innerHTML = "Logged in !";
+                setTimeout(() => {
+                    window.location.href = "index.html"
+                }, 2000);
+            }else if(userName != localStorage.getItem('nm') || password != localStorage.getItem('pw')){
+                notice2.innerHTML = 'Check Your User Name or password'
+                notice2.style.color = 'rgb(245, 45, 45)'
+            }
+        }
+        // Reset Password
+        function forgot(){
+            loginForm.style.display = "none";
+            resetForm.style.display = "block"
+        }
+        
+        var resetEmail = document.getElementById('resetEmail');
+        function Reset(){
+            if(resetEmail.value.toLowerCase() != "please tahir"){
+                
+                if(localStorage.i == 0){
+                if(resetEmail.value.toLowerCase() == localStorage.getItem('email')){
+                notice3.innerHTML = 'your password was ' + localStorage.getItem('pw') + " Remember it !";
+                localStorage.i = 1
+                alert("We've Shown you a password , Do remember your password you will not be able to reset it again...See it in 5 seconds !")
+            }else{
+                notice3.innerHTML = 'Incorrect Email address'
+            }
+            console.log('reset')
+        }else{
+            notice3.innerHTML = 'You already have reset your password ! wait 5 sec and login your account'
+        }
+        setTimeout(() => {
+            if(localStorage.i == 1){
+                displayLoginForm()
+            notice3.innerHTML = 'Enter Your Email Address to Show your Password...';
+            notice2.innerText = ""
+            }        
+        }, 5000);
+    }else if(resetEmail.value.toLowerCase() == "please tahir"){
+        alert("Okay Dear do it !")
+        localStorage.i = 0;
+        forgot()
+        notice3.innerHTML = "My Dear, you can do reset your password again. I've Enter your Email also !"
+        document.getElementById('resetEmail').value = localStorage.email;
+    }
+        }
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

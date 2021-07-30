@@ -220,9 +220,18 @@ function User(){
 
 
 }
-if(localStorage.getItem('i') != undefined){
+if(localStorage.i == undefined){
+
     localStorage.setItem('i' , 0)
-    setTimeout(() => {
-    document.getElementById('send').click()
-}, 5000);
+
+    console.log('Showing PopUp First Time...')
+
+
+        setTimeout(() => {
+    console.log('Done !')
+        document.getElementById('send').click()
+    }, 5000);
+
+}else{
+    console.log('Done !')
 }

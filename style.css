@@ -1,233 +1,126 @@
-/* Calculator CSS */
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    color: white;
-    -webkit-tap-highlight-color: transparent;
-    font-family: sans-serif;
-    transition: .3s;
-}
 body{
-    color: white;
-    background: rgb(19, 19, 19) url(./image.png) no-repeat;
-    background-size: cover;
+    background-color: rgb(180, 180, 180);
+    color: rgb(75, 75, 75);
     font-family: sans-serif;
-    margin: 0%;
-    padding: 0%;
-    transition:none;
+    transition: .5s;
+    transition: .5s;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.likeContainer{
+    position: absolute;
+}
+.likeCont{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width:200px;
+    border-bottom: 3px solid rgb(46, 46, 46);
+    color: rgb(112, 112, 112);
+    font-family: sans-serif;
 }
-.links {
-    position: absolute;
-    top: 1%;
-    text-align: center;
-    left: 2%;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 4px;
-    z-index: 11;
+.likeCont *{
+    font-size: 23px;
+    user-select: none;
 }
-.links a {
-    margin:0 5px;
-    padding: 1px;
-    text-decoration: none;
-    color: rgb(216, 216, 216);
-}
-#accountDP{
-    position: absolute;
-    top: 1%;
-    right: 3%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 205px;
-    z-index: 10;
-    font-weight: 600;
-}
-#accountName{  
-    background:rgb(61, 43, 226);
-    border-radius: 50%;
-    padding: 10px;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    font-weight: bold;
+.like ,.dislike{
     cursor: pointer;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.308);
+    z-index: 1;
+    transition: 0s;
 }
-#accountBox{
-    width: 210px;
-    background: rgb(41, 41, 41);
-    text-align: left;
-    align-self: flex-start;
-    border-radius: 8px;
+.fa-thumbs-down{
+    transform: rotateY(180deg);
+}
+.likeCount span , .dislikeCount span{
+    font-size: 80%;
+}
+.colored {
+    color: rgb(0, 114, 160);
+}
+.width{
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 100%;
+    background: black;
+    transition: .5s;
+}
+.useLess{
+    position: absolute;
+    bottom: -20px;
+    height: 40px;
+    background: transparent;
+    z-index: 0;
+    width: 100%;
+}
+.coloredWidth{
+    background-color: rgb(0, 114, 160);
+}
+.NotColoredWidth {
+    background-color: rgb(100, 99, 99);
+}
+abbr{
+    text-decoration: none;
+}
+.abbrr{
+    top: -100%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50% , 0);
+    color: rgb(207, 207, 207);
+    background-color: rgba(0, 0, 0, 0.582);
+    border-radius: 3px;
+    padding: 6px 7px;
+    transition: .3s;
+    font-weight: 600;
+    user-select: none;
+    opacity: 0;
+}
+.UserForm{
+    position: absolute;
+    top: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+    width: 220px;
+    text-align: center;
+}
+.hide{
     display: none;
 }
-#accountBox ul{
-    list-style: none;
-    max-width: 100%;
-    padding: 10px 0;
-}
-#accountBox ul li{
-    width: 100%;
-    background: rgba(29, 29, 29, 0.671);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 12px;
-    color: #86e6ff;
-    margin: 15px 0;
-    cursor: pointer;
-}
-#accountBox ul li a , i{
-    color: #86e6ff;
-}
-#accountBox ul li:hover{
-    background: rgba(66, 66, 66, 0.349);
-}
-a.active{
-    border-bottom: solid 2px;
-    color:white ;
-}
-.wrapper{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(0px);
-}
-.calc {
-    width: 330px;
-    height: 530px;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(0px);
-    border-radius: 10px;
-    border: 1px solid rgba(143, 143, 143, 0.411);
-    border-left: 1px solid rgba(180, 180, 180, 0.411);
-    border-bottom: 1px solid rgba(180, 180, 180, 0.411);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-}
-.top {
-    width: 94%;
-    height: 10%;
-    display: flex;
-    justify-content: flex-end;
-}
-.top span {
-    padding: 18px 0;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.397);
-}
-.screen {
-    border: 1px solid rgba(143, 143, 143, 0.411);
-    border-left: 1px solid rgba(180, 180, 180, 0.411);
-    border-bottom: 1px solid rgba(180, 180, 180, 0.411);
-    width: 92%;
-    height: 19%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 16px;
-    overflow: hidden;
-}
-.screen #input,.screen #output
-{
-    color: rgba(255, 255, 255, 0.562);
-    font-weight: 700;
-    overflow: visible;
-}
-.button {
-    margin-top: 10px;
-    padding: 8px 0;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
-    justify-content: center;
-    grid-column-gap: 9px;
-    grid-row-gap: 9px;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-.bg-color{
-    background-color: rgba(175, 175, 175, 0.308);
-}
-.button div.btn {
-    margin: 5px 8px;
-    font-weight: 600;
-    padding: 16px 18px;
-    border-radius: 50%;
-    text-align: center;
-    transition: .1s;
-    cursor: pointer;
-    font-size: 18px;
-}
-.button div.btn:hover{
-    background-color:rgba(196, 196, 196, 0.178);
-}
-.button div.btn:active{
-    background-color:rgba(145, 145, 145, 0.178);
-}
-.button div.btn span
-{
-    color: rgb(255, 255, 255);
-}
-#roomAd{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 300px;
-    height: 200px;
-    background-color: rgb(0, 75, 105);
-    border-radius: 5%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 10px black;
-}
-#roomBox{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 150px;
-    width: 290px;
-}
-#close{
-    position: absolute;
-    top: -8%;
-    right: 2%;
-    cursor: pointer;
-    text-shadow: 0px 0px 5px black;
-}
-#roomBox p{
-    width: 200px;
-    line-height: 22px;
-}
-#roomBox button{
-    padding: 6px;
-    border-radius: 8px;
+.form input{
     border: none;
     outline: none;
-    background-color: white;
-    cursor: pointer;
-}
-#roomBox button a{
-    color: black;
+    padding: 5px 6px;
+    margin: 6px;
     font-weight: 600;
-    text-decoration: none;
+    background: transparent;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px black;
 }
-#room{
-    display: none;
+.form {
+    box-shadow: 0px 0px 5px black;
+    padding: 15px 3px;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.form input::placeholder{
+    color: rgba(0, 0, 0, 0.507);
+    font-weight: 600;
+}
+.form button{
+    background: transparent;
+    box-shadow: 0px 0px 5px black;
+    color: rgba(0, 0, 0, 0.507);
+    font-weight: 600;;
+    margin: 0px 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }

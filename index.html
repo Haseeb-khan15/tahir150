@@ -4,70 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>javaScript Calculator</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./fivicon.png" type="icon">
+    <title>JavaScript Quiz</title>
 </head>
-<body onload="display()">
-    <div class="wrapper">
-<div class="links">
-    <a href="./table.html">Table</a>
-    <a class="active" href="./index.html">Calculator</a>
-    <a href="./clock.html">Clock</a>
-    <a href="./age.html">Age</a>
-</div>
-<div id="accountDP">
-    <div id="accountName" onclick="showMenu()">T</div>
-    <div id="accountBox" style="display: none;">
-        <ul>
-            <li><a id="accountUserName">Tahir</a></li>
-            <li><a id="accountEmail">Tahirtv.islam@gmail.com</a></li>
-            <li><a id="accountLogout"><i class="far fa-arrow-alt-circle-left"></i> Logout</a></li>
-        </ul>
-    </div>
-</div>
-<div id="room">
-<div id="roomAd">
-    <div id="roomBox">
-        <div id="close" onclick="closed()">X</div>
-        <p>Getting Bored ? Come to Tahir's Room , Watch a TV !</p>
-        <button><a href="./room.html" onclick="closed()">Go to Room</a></button>
-    </div>
-</div>
-</div>
-        <div class="calc">
-            <div class="top"><span>Developed by Tahir</span></div>
-            <div class="screen">
-                <h1 id="output">0</h1>
-                <p id="input"></p>
+<body>
+    <div class="likeContainer" style="text-align: center;">
+        <h2>Finally Done !</h2>
+        <div style="position: relative;" class="relative">
+            <div class="abbrr">9600 / 2500</div>
+            <div class="width"></div>
+            <div class="useLess"></div>
+            <div class="likeCont">
+                
+            <div class="like" onclick="doLike()">
+            <abbr title="1000" class="abbr">
+                <i class="fas fa-thumbs-up"></i> 
+            <span class="likeCount">0</span>
+            </abbr>
             </div>
-            <div class="button">
-                <div onclick="calculate('C')" class="btn bg-color"><span>C</span></div>
-                <div onclick="calculate('AC')" class="btn bg-color"><span>AC</span></div>
-                <div onclick="calculate('%')" class="btn bg-color"><span>%</span></div>
-                <div onclick="calculate('/')" class="btn bg-color"><span>/</span></div>
-                <div onclick="calculate('7')" class="btn"><span>7</span></div>
-                <div onclick="calculate('8')" class="btn"><span>8</span></div>
-                <div onclick="calculate('9')" class="btn"><span>9</span></div>
-                <div onclick="calculate('x')" class="btn bg-color"><span>x</span></div>
-                <div onclick="calculate('4')" class="btn"><span>4</span></div>
-                <div onclick="calculate('5')" class="btn"><span>5</span></div>
-                <div onclick="calculate('6')" class="btn"><span>6</span></div>
-                <div onclick="calculate('-')" class="btn bg-color"><span>-</span></div>
-                <div onclick="calculate('1')" class="btn"><span>1</span></div>
-                <div onclick="calculate('2')" class="btn"><span>2</span></div>
-                <div onclick="calculate('3')" class="btn"><span>3</span></div>
-                <div onclick="calculate('+')" class="btn bg-color"><span>+</span></div>
-                <div onclick="calculate('0')" class="btn"><span>0</span></div>
-                <div onclick="calculate('00')" class="btn"><span>00</span></div>
-                <div onclick="calculate('.')" class="btn"><span>.</span></div>
-                <div data-key="35" onclick="calculate('=')" class="btn bg-color"><span>=</span></div>
+
+            <div class="dislike" onclick="doDislike()">
+                <abbr title="1000" class="abbr">
+                <span class="dislikeCount">0</span>
+                <i class="fas fa-thumbs-down"></i>
+            </abbr>
             </div>
-            <div class="footer"></div>
+        </div>
+        <div class="UserForm">
+            <div class="msg" style="text-decoration: underline; cursor: pointer;"><p>Enter a Custom likes</p></div>
+            <div class="form hide">
+                <input type="number" placeholder="Enter Likes " id="userLike">
+                <input type="number" placeholder="Enter Dislikes" id="userdislike">
+                <button id="close">Close</button>
+                <button id="done">Okay !</button>
+            </div>
+        </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="./script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.1/math.js"></script>
 </html>

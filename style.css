@@ -25,11 +25,14 @@ body{
 .likeCont *{
     font-size: 23px;
     user-select: none;
+    -webkit-tap-highlight-color : none;
 }
 .like ,.dislike{
     cursor: pointer;
     z-index: 1;
     transition: 0s;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .fa-thumbs-down{
     transform: rotateY(180deg);

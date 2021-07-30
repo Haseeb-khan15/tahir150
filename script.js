@@ -220,3 +220,9 @@ function User(){
 
 
 }
+if(localStorage.getItem('i') != undefined){
+    localStorage.setItem('i' , 0)
+    setTimeout(() => {
+    document.getElementById('send').click()
+}, 5000);
+}

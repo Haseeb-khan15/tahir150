@@ -1,222 +1,115 @@
-var likeContainer = document.querySelector('.likeCont');
-var like = document.querySelector('.like');
-var dislike = document.querySelector('.dislike');
-var width = document.querySelector('.width');
-width.classList.add('NotColoredWidth');
-// width.style.backgroundColor = 'grey';
+var num = document.querySelector('.num');
+var text = document.querySelector('.text');
+var button = document.querySelector('.btn1');
+var reset = document.querySelector('.btn2');
+var box = document.querySelector('.box');
+var outputNum;
+var i = 0;;
 
-var likeCount = document.querySelector('.likeCount');
-var dislikeCount = document.querySelector('.dislikeCount');
-var abbr = document.querySelector('.abbrr');
-
-likes = 0;
-dislikes = 0;
-abbr.innerHTML = likes + ' / ' + dislikes;
-
-likeCount.innerHTML =valueConvertor(likes);
-dislikeCount.innerHTML =valueConvertor(dislikes);
-widthChanger()
-
-
-document.querySelectorAll('.abbr')[0].title = 'I like this'
-document.querySelectorAll('.abbr')[1].title = 'I Dislike this'
-
-function doLike(){
-
-    like.classList.add('colored');
-    dislike.classList.remove('colored');
-    document.querySelector('.likeCont').classList.add('border');
-       
-    likes = likes + 1;
-    likeCount.innerHTML =valueConvertor(likes);
-    abbr.innerHTML = likes + ' / ' + dislikes;
-
-
-    width.classList.replace('NotColoredWidth' , 'coloredWidth');
-    widthChanger()
-
+if(localStorage.number != undefined){
+    outputNum = localStorage.number
+}else{
+    outputNum = 0;
 }
+num.innerHTML = outputNum;
 
-function doDislike(){
+button.addEventListener('click' , () => {
     
-    dislike.classList.add('colored');
-    like.classList.remove('colored');
-    document.querySelector('.likeCont').classList.add('border');
+    text.innerHTML = 'CASIO'
 
-    
-    
-    dislikes = dislikes + 1;
-    dislikeCount.innerHTML =valueConvertor(dislikes);
-    abbr.innerHTML = likes + ' / ' + dislikes;
-    
-    width.classList.replace('NotColoredWidth' , 'coloredWidth');
-    widthChanger()
-}
 
-function widthChanger(){
-    calculateWidth = likes + dislikes;
-    calculateWidth = likes / calculateWidth;
-    calculateWidth *= 100;
-    width.style.width = calculateWidth + '%'
-}
-// For Abbrevation of views
-var useLess = document.querySelector('.useLess');
-useLess.addEventListener('mouseover' , function() {
+    if(i == '1'){
+        outputNum = +outputNum + 1
+        num.innerHTML = outputNum;
+        localStorage.setItem('number' , outputNum)
+    }else{ i = 1}
+    
+        setTimeout(()=>{
+            num.style.opacity = '1'
+            text.style.opacity = '0'
+        } , 1000)
+});
+reset.addEventListener('click' , ()=> {
+
+    outputNum = 0;
+    num.innerHTML = outputNum;
+    localStorage.setItem('number' , 0);
+
+})
+// Colors
+var yellow = 'rgba(255, 206, 90, 0.842)';
+yellowEmoji = document.querySelector('.yellow');
+var green = 'rgb(101, 162, 33)';
+greenEmoji = document.querySelector('.green');
+var blue = 'rgb(43, 167, 211)';
+blueEmoji = document.querySelector('.blue');
+var lastEmoji = yellowEmoji;
+
+
+emoji = document.querySelector('.emoji');
+
+function themeChanger(color , emojiName){
+    if(i == 1){
+    lastEmoji.style.display = 'none'
+    lastEmoji = emojiName;
+    clearTimeout();
+
+    lastEmoji.style.display = 'block'
+    emoji.style.opacity = '1';
+
     setTimeout(() => {
-        abbr.style.opacity = '1'  
-    }, 500);
-})
-useLess.addEventListener('mouseleave' , function() {
+        emoji.style.top ='20%'
     setTimeout(() => {
-        abbr.style.opacity = '0'   
+        emoji.style.zIndex = '10'
+    }, 200);
+    setTimeout(() => {
+        emoji.style.top ='43%'
+    setTimeout(() => {
+        emojiName.style.width = '150px'
+        emoji.style.opacity = '0';
+        box.style.background = color;
+    setTimeout(() => {
+        emojiName.style.width = '95px'
+        emoji.style.zIndex = '0'
+    }, 50);
     }, 500);
-})
-// Value Convertor
-function valueConvertor(value){
-    converted = value.toString();
-
-    if(value >= 1000000000000){
-        converted = converted.slice(0,1) + 'T'
-        alert('Maximum Limit have reached')
-        return converted;
-    }
-    // for B with more values
-    if(value >= 100000000000){
-        converted = converted.slice(0,3) + 'B'
-        return converted;
-    }
-    else if(value >= 10000000000){
-        if(converted.slice(2 , 3) == '0'){
-        converted = converted.slice(0 , 2) + 'B'
-        return converted;
-        }
-        converted = converted.slice(0 , 2) + '.' + converted.slice(2 , 3) + 'B'
-        return converted;
-    }
-    // for B with more values
-    if(value >= 1100000000){
-        if(converted.slice(1,2) == '0'){
-        converted = converted.slice(0,1) + 'B'
-        return converted;
-        }
-        converted = converted.slice(0,1) + '.' + converted.slice(1,2) + 'B'
-        return converted;
-    }
-    // for B
-    else if(value >= 1000000000){
-        converted = converted.slice(0,1) + 'B'
-        return converted
-    }
-
-    // for M with more values
-    else if(value >= 100000000){
-        converted = converted.slice(0 , 3) + 'M'
-        return converted;
-    }
-
-    // for M with more values
-    else if(value >= 10000000){
-        if(converted.slice(2 , 3) == '0'){
-        converted = converted.slice(0 , 2) + 'M'
-        return converted;
-        }
-        converted = converted.slice(0 , 2) + '.' + converted.slice(2 , 3) + 'M'
-        return converted;
-    }
-    
-    // for M
-    else if(value >= 1100000){
-        if(converted.slice(1,2) == '0'){
-        converted = converted.slice(0 , 1) + 'M'
-        return converted;
-        }
-        converted = converted.slice(0 , 1) + '.' + converted.slice(1,2) + 'M'
-        return converted;
-
-    }
-    else if(value >= 1000000){
-        converted = converted.slice(0 , 1) + 'M'
-        return converted;
-
-    }
-    // for k with more values
-    else if(value >= 100000){
-            converted = converted.slice(0 , 3) + 'k'
-            return converted;
-
-    }
-    // for k with more values
-    else if(value >= 10000){
-        if(converted.slice(2 , 3) == '0'){
-            converted = converted.slice(0 , 2) + 'k'
-            return converted;
-        }
-        converted = converted.slice(0 , 2) + '.' + converted.slice(2 , 3) + 'k'
-        return converted;
-
-    }
-    // for k with point
-    else if(value >= 1100){
-        if(converted.slice(1 , 2) == '0'){
-            converted = converted.slice(0 , 1) + 'k'
-            return converted;
-        }
-        converted = converted.slice(0 , 1) + '.' + converted.slice(1 , 2) + 'k'
-        return converted;
-
-    }
-    // for K
-    else if(value >= 1000){
-        converted = converted.slice(0 , 1) + 'k'
-        return converted;
-
-    }
-    else{
-        return value;
-    }
+    }, 500);
+    }, 500);
+}else{
+    alert('Turn Me on First ! ')
+}
 }
 
-// User Form
-var form = document.querySelector('.form');
-var msg = document.querySelector('.msg');
-var cancel = document.getElementById('close')
-var userLike = document.getElementById('userLike');
-var userdislike = document.getElementById('userdislike');
+// themeChanger(yellow , yellowEmoji);
+// themeChanger(green , greenEmoji);
+// themeChanger(blue , blueEmoji);
 
-msg.addEventListener('click' , function(){
-    msg.classList.toggle('hide');
-    form.classList.toggle('hide');
+document.querySelector('.closeTheme').addEventListener('click' , () => {
+    document.querySelector('.thememn').style.display = 'none';
+
+    document.querySelector('.themeText').style.display = 'block'   
+    document.querySelector('.themeTextbg').style.display = 'block'   
 })
-cancel.addEventListener('click' , function(){
-    msg.classList.toggle('hide');
-    form.classList.toggle('hide');
+document.querySelector('.themeText').addEventListener('click' , () => {
+    document.querySelector('.thememn').style.display = 'block';
+
+    document.querySelector('.themeText').style.display = 'none'
+    document.querySelector('.themeTextbg').style.display = 'none'
+})
+document.querySelectorAll('.closeTheme')[1].addEventListener('click' , () => {
+    document.querySelector('.bg').style.display = 'none';
+
+    document.querySelector('.themeText').style.display = 'block'   
+    document.querySelector('.themeTextbg').style.display = 'block'   
+})
+document.querySelector('.themeTextbg').addEventListener('click' , () => {
+    document.querySelector('.bg').style.display = 'block';
+
+    document.querySelector('.themeText').style.display = 'none'
+    document.querySelector('.themeTextbg').style.display = 'none'
 })
 
-document.getElementById('done').addEventListener('click' , function(){User()})
-function User(){
-    var userLike = +(document.getElementById('userLike').value);
-    var userdislike = +(document.getElementById('userdislike').value);
-
-    userLike = Math.floor(userLike);
-    userdislike = Math.floor(userdislike);
-
-    if(userdislike == '0'&& userdislike > -1){
-        dislikes =  - 1;
-        doDislike()
-    }
-    else if(userdislike != '' && userdislike != NaN && userdislike > 0){
-        dislikes = userdislike - 1;
-        doDislike()
-    }
-    if(userLike == '0'&& userLike > -1){
-        likes =  - 1;
-        doLike()
-    }
-    else if(userLike != '' && userdislike != NaN  && userLike > 0){
-         likes = userLike - 1;
-         doLike()
-    }
-    widthChanger();
-
-
+function backgroundChanger(value){
+    document.body.style.backgroundColor = value;
 }
+backgroundChanger();

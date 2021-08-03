@@ -9,7 +9,7 @@
     <title>JavaScript Practice</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="position: relative;">
         <div class="emoji">
             <!-- 😁 -->
             <img class="MnEmoji yellow" src="./emoji.png">
@@ -40,7 +40,8 @@
                 <p style="cursor: pointer;">Available Themes</p>
             </div>
             <div class="themeButtons">
-                <div onclick="themeChanger(blue , blueEmoji);" class="themeBtn bl"></div>
+                <div onclick="themeChanger(blue , blueEmoji);" class="themeBtn bl">
+                    <div class="active"></div></div>
                 <div onclick="themeChanger(green , greenEmoji);" class="themeBtn gr"></div>
                 <div onclick="themeChanger(yellow , yellowEmoji);" class="themeBtn yl"></div>
             </div>
